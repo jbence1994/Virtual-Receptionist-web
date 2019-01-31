@@ -28,10 +28,10 @@
                 <h1>Számlázási tételek beállítása</h1>
             </article>
             <article>
-                <h1>Naplózás</h1>
+                <h1>Naptár</h1>
             </article>
             <article>
-                <h1>Naptár</h1>
+                <h1>Naplózás</h1>
             </article>
         </section>
         <?php require_once('../templates/footer.html'); ?>
