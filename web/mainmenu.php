@@ -13,6 +13,28 @@
         <link rel="icon" href="../img/favicon.png" type="image/x-icon"/>
     </head>
     <body>
-        
+        <header>Virtual Receptionist adminisztrációs felület</header>
+        <aside>
+            <div id="menuside">Szálláshely adatainak beállítása</div>
+            <div id="menuside">Felhasználói fiók létrehozása</div>
+            <div id="menuside">Szobák beállítása</div>
+            <div id="menuside">Számlázási tételek beállítása</div>
+            <div id="menuside">Naplózás</div>
+            <div id="menuside">Naptár</div>
+        </aside>
+        <section>
+            <article>
+                <h1>Felhasználói fiók létrehozása</h1>
+            </article>
+            <article>
+                <h1>Számlázási tételek beállítása</h1>
+            </article>
+            <article>
+                <h1></h1>
+            </article>
+        </section>
+        <footer class=" footer-copyright text-center py-3">
+            <span>&copy; 2019. Virtual Receptionist | Juhász Bence</span>
+        </footer>
     </body>
 </html>
