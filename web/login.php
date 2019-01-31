@@ -3,7 +3,7 @@
 session_start();
 require_once('../config/connect.php');
 
-if (isset(post('submit'))) {
+if (isset(post('login'))) {
     $accomodationID = post('accomodationID');
     $password = post('password');
 
