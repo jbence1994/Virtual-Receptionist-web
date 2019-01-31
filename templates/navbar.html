@@ -4,13 +4,18 @@
             <p class="navbar-brand">Virtual Receptionist adminisztrációs felület</p>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="#">Főmenü</a></li>
-            <li><a href="#">Szálláshely adatainak beállítása</a></li>
-            <li><a href="#">Felhasználói fiók készítése</a></li>
-            <li><a href="#">Szobák beállítása</a></li>
-            <li><a href="#">Számlázási tételek beállítása</a></li>
-            <li><a href="#">Naptár</a></li>
-            <li><a href="#">Naplózás</a></li>
+            <li><a href="../web/mainmenu.php">Főmenü</a></li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">Profil<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="../web/setaccomodation.php">Szálláshely adatainak beállítása</a></li>
+                    <li><a href="../web/log.php">Naplózás</a></li>
+                </ul>
+            </li>
+            <li><a href="../web/setrooms.php">Szobák beállítása</a></li>
+            <li><a href="../web/setbilling.php">Számlázási tételek beállítása</a></li>
+            <li><a href="../web/calendar.php">Naptár</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="../web/logout.php">Kijelentkezés</a></li>
