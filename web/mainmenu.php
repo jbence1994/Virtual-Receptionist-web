@@ -24,13 +24,22 @@
         </aside>
         <section>
             <article>
+                <h1>Szálláshely adatainak beállítása</h1>
+            </article>
+            <article>
                 <h1>Felhasználói fiók létrehozása</h1>
+            </article>
+            <article>
+                <h1>Szobák beállítása</h1>
             </article>
             <article>
                 <h1>Számlázási tételek beállítása</h1>
             </article>
             <article>
-                <h1></h1>
+                <h1>Naplózás</h1>
+            </article>
+            <article>
+                <h1>Naptár</h1>
             </article>
         </section>
         <?php require_once('../templates/footer.html'); ?>
