@@ -34,8 +34,6 @@
                 </a>
             </div>
         </div>
-        <footer class=" footer-copyright text-center py-3">
-            <span>&copy; 2019. Virtual Receptionist | Juhász Bence</span>
-        </footer>
+        <?php require_once('../templates/footer.html'); ?>
     </body>
 </html>
