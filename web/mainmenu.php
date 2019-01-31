@@ -13,7 +13,7 @@
         <link rel="icon" href="../img/favicon.png" type="image/x-icon"/>
     </head>
     <body>
-        <header>Virtual Receptionist adminisztrációs felület</header>
+        <?php require_once('../templates/header.html'); ?>
         <aside>
             <div id="menuside">Szálláshely adatainak beállítása</div>
             <div id="menuside">Felhasználói fiók létrehozása</div>
