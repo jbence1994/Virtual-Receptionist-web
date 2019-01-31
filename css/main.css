@@ -1,5 +1,5 @@
 body{
-    background-color: #9fcdff;
+    background-color: #80bdff;
 }
 #login{
     width: 100%;
@@ -7,17 +7,17 @@ body{
 }
 footer{
     padding: 10px;
-    color: black;
+    color: #9d9d9d;
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #80bdff;
+    background-color: #222;
 }
 #login-box{
     padding: 20px;
     margin: 0 auto;
-    background-color: #80bdff;
+    background-color: #9fcdff;
     width: 40%;
 }
 #login-box h3{
