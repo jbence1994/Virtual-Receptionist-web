@@ -19,9 +19,6 @@
                 <h1>Szálláshely adatainak beállítása</h1>
             </article>
             <article>
-                <h1>Felhasználói fiók létrehozása</h1>
-            </article>
-            <article>
                 <h1>Szobák beállítása</h1>
             </article>
             <article>
