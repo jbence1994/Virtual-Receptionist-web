@@ -13,15 +13,7 @@
         <link rel="icon" href="../img/favicon.png" type="image/x-icon"/>
     </head>
     <body>
-        <?php require_once('../templates/header.html'); ?>
-        <aside>
-            <div id="menuside">Szálláshely adatainak beállítása</div>
-            <div id="menuside">Felhasználói fiók létrehozása</div>
-            <div id="menuside">Szobák beállítása</div>
-            <div id="menuside">Számlázási tételek beállítása</div>
-            <div id="menuside">Naplózás</div>
-            <div id="menuside">Naptár</div>
-        </aside>
+        <?php require_once('../templates/navbar.html'); ?>
         <section>
             <article>
                 <h1>Szálláshely adatainak beállítása</h1>
