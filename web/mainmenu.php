@@ -1,9 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION['accomodation'])) {
-    die();
-}
-?>
+<?php require_once('../config/isloggedin.php'); ?>
 <!DOCTYPE html>
 <html lang="hu">
     <head>
