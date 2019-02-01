@@ -29,7 +29,7 @@
                 </div>
             </form>
             <div id="registration">
-                <a href="#" data-toggle="tooltip" data-placement="right" title="Itt megteheti!">
+                <a href="registration.php" data-toggle="tooltip" data-placement="right" title="Itt megteheti!">
                     <span>Még nem regisztrálta szálláshelyét?</span>
                 </a>
             </div>
