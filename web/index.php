@@ -17,7 +17,7 @@
                 <img src="../img/vr-logo.png" alt="logo"/>
             </div>
             <form method="post" action="login.php">
-                <div class="form-group" id="login-box">
+                <div class="form-group" id="box">
                     <h3>Adminisztrációs felület</h3>
                     <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Szálláshely azonosító" required/>
                     <input type="password" name="password" id="password" class="form-control" placeholder="Jelszó" required/>

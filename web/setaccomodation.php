@@ -14,15 +14,17 @@
     </head>
     <body>
         <?php require_once('../templates/navbar.html'); ?>
-        <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Szálláshely azonosító" required/>
-        <input type="text" name="companyName" id="companyName" class="form-control" placeholder="Cégnév" required/>
-        <input type="text" name="contact" id="contact" class="form-control" placeholder="Kapcsolattartó" required/>
-        <input type="text" name="VATNumber" id="VATNumber" class="form-control" placeholder="Adószám" required/>
-        <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Székhely" required/>
-        <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Telephely" required/>
-        <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Telefonszám" required/>
-        <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="E-mail cím" required/>
-        <input type="submit" id="updateCompanyData" name="updateCompanyData" class="btn btn-primary" value="Adatok módosítása"/>
+        <div id="box">
+            <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Szálláshely azonosító" required/>
+            <input type="text" name="companyName" id="companyName" class="form-control" placeholder="Cégnév" required/>
+            <input type="text" name="contact" id="contact" class="form-control" placeholder="Kapcsolattartó" required/>
+            <input type="text" name="VATNumber" id="VATNumber" class="form-control" placeholder="Adószám" required/>
+            <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Székhely" required/>
+            <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Telephely" required/>
+            <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Telefonszám" required/>
+            <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="E-mail cím" required/>
+            <input type="submit" id="updateCompanyData" name="updateCompanyData" class="btn btn-primary" value="Adatok módosítása"/>
+        </div>
         <?php require_once('../templates/footer.html'); ?>
     </body>
 </html>
