@@ -23,7 +23,7 @@
             <input type="text" name="site" id="site" class="form-control" placeholder="Telephely" required/>
             <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="Telefonszám" required/>
             <input type="text" name="emailAddress" id="emailAddress" class="form-control" placeholder="E-mail cím" required/>
-            <input type="submit" id="updateCompanyData" name="updateCompanyData" class="btn btn-primary" value="Adatok módosítása"/>
+            <input type="submit" name="updateCompanyData" id="updateCompanyData" class="btn btn-primary" value="Adatok módosítása"/>
         </div>
         <?php require_once('../templates/footer.html'); ?>
     </body>
