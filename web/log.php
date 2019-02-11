@@ -1,3 +1,4 @@
+<?php require_once('../config/isloggedin.php'); ?>
 <!DOCTYPE html>
 <html lang="hu">
     <head>
