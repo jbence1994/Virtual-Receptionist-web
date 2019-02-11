@@ -9,7 +9,14 @@ $(document).ready(function () {
  * Adatbázis leolvasó metódus
  */
 function getRooms() {
-    $.get("../CRUD/select_room.php", function (answer) {
-        $('#rooms').html(answer);
+    $.ajax({
+        url: "../CRUD/select_room.php",
+        method: "post",
+        success: function (answer) {
+            $('#rooms').html(answer);
+        },
+        error: function (xhr) {
+            alert(xhr.status);
+        }
     });
 }
