@@ -60,3 +60,12 @@ img{
     font-weight: bold;
     font-size: 20px;
 }
+#room_table{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    border-collapse: collapse;
+}
+#room_table tr:hover{
+    background-color: grey;
+}

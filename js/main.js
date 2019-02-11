@@ -1,9 +1,10 @@
 $(document).ready(function () {
-    
+
     /**
      * Tooltip -> Bootstrap
      */
     $('[data-toggle="tooltip"]').tooltip();
+
     /**
      * Szobák kiolvasása adatbázisból
      */

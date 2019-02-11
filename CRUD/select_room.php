@@ -9,7 +9,7 @@ if (!$result) {
     die("Hiba az olvasás közben");
 }
 
-$rooms = "<table>"
+$rooms = "<table id='room_table'>"
         . "<tr>"
         . "<th>ID</th>"
         . "<th>Szoba neve</th>"
@@ -25,16 +25,18 @@ while ($row = $result->fetch_assoc()) {
             . "<td>{$row['Number']}</td>"
             . "<td>{$row['CategoryName']}</td>"
             . "<td>{$row['Capacity']}</td>"
-            . "<td>";
+            . "<td><button class='btn btn-primary' class='delete' id='{$row['ID']}'>Törlés</button></td>"
+            . "</tr>";
 }
 echo $rooms;
 
 $rooms = "<tr>"
         . "<td id='ID'></td>"
-        . "<td id='name' conteneditable></td>"
-        . "<td id='number' conteneditable></td>"
-        . "<td id='category' conteneditable></td>"
-        . "<td id='capacity' conteneditable></td>"
+        . "<td id='name' contenteditable></td>"
+        . "<td id='number' contenteditable></td>"
+        . "<td id='category' contenteditable></td>"
+        . "<td id='capacity' contenteditable></td>"
+        . "<td><button class='btn btn-primary' class='insert'>Hozzáadás</button></td>"
         . "</tr>";
 $rooms .= "</table>";
 echo $rooms;
