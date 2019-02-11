@@ -2,7 +2,7 @@
 
 require_once('../config/connect.php');
 
-$sql = "SELECT * FROM room";
+$sql = "SELECT room.ID, room.Name, room.Number, room_category.CategoryName, room.Capacity FROM room, room_category WHERE room.Category=room_category.ID ORDER BY ID;";
 $result = $connection->query($sql);
 
 if (!$result) {
@@ -14,8 +14,8 @@ $rooms = "<table>"
         . "<th>ID</th>"
         . "<th>Szoba neve</th>"
         . "<th>Szobaszám</th>"
-        . "<th>Kategória</th>"
-        . "<th>Kapacitás</th>"
+        . "<th>Szobakategória</th>"
+        . "<th>Kapacitás (fő)</th>"
         . "</tr>";
 
 while ($row = $result->fetch_assoc()) {
