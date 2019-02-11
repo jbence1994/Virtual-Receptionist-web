@@ -23,7 +23,7 @@ while ($row = $result->fetch_assoc()) {
             . "<td>{$row['ID']}</td>"
             . "<td>{$row['Name']}</td>"
             . "<td>{$row['Number']}</td>"
-            . "<td>{$row['Category']}</td>"
+            . "<td>{$row['CategoryName']}</td>"
             . "<td>{$row['Capacity']}</td>"
             . "<td>";
 }
