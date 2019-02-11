@@ -26,7 +26,7 @@ while ($row = $result->fetch_assoc()) {
             . "<td contenteditable>{$row['CategoryName']}</td>"
             . "<td contenteditable>{$row['Capacity']}</td>"
             . "<td><button class='btn btn-primary' class='delete' id='{$row['ID']}'>Törlés</button></td>"
-            . "<td><button class='btn btn-primary' class='update' id='{$row['ID']}'>Módisítás</button></td>"
+            . "<td><button class='btn btn-primary' class='update' id='{$row['ID']}'>Módosítás</button></td>"
             . "</tr>";
 }
 echo $rooms;
@@ -37,7 +37,7 @@ $rooms = "<tr>"
         . "<td class='editable' id='number' contenteditable></td>"
         . "<td class='editable' id='category' contenteditable></td>"
         . "<td class='editable' id='capacity' contenteditable></td>"
-        . "<td><button class='btn btn-primary' class='insert'>Hozzáadás</button></td>"
+        . "<td colspan='2'><button class='btn btn-primary' class='insert'>Hozzáadás</button></td>"
         . "</tr>";
 $rooms .= "</table>";
 echo $rooms;
