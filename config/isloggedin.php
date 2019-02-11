@@ -2,5 +2,5 @@
 
 session_start();
 if (!isset($_SESSION['accomodation'])) {
-    die();
+    header('Location: logged_out.php');
 }
