@@ -7,7 +7,7 @@ if (isset($_POST['login'])) {
     $accomodationID = $_POST['accomodationID'];
     $password = $_POST['password'];
 
-    $sql = "SELECT accomodation.AccomodationID, accomodation.Password FROM accomodation WHERE accomodation.AccomodationID = '$accomodationID' AND accomodation.Password = '$password';";
+    $sql = "SELECT accomodation_profile.AccomodationID, accomodation_profile.Password FROM accomodation_profile WHERE accomodation_profile.AccomodationID = '$accomodationID' AND accomodation_profile.Password = '$password';";
     $result = $connection->query($sql);
 
     if ($result->num_rows == 1) {
