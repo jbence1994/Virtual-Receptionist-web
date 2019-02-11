@@ -20,7 +20,7 @@ $rooms = "<table id='room_table'>"
 
 while ($row = $result->fetch_assoc()) {
     $rooms .= "<tr>"
-            . "<td contenteditable>{$row['ID']}</td>"
+            . "<td>{$row['ID']}</td>"
             . "<td contenteditable>{$row['Name']}</td>"
             . "<td contenteditable>{$row['Number']}</td>"
             . "<td contenteditable>{$row['CategoryName']}</td>"
