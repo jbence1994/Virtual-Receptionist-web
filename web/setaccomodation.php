@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="hu">
     <head>
-        <meta charset="utf-8">
-        <title>Szálláshely adatainak beállítása | Virtual Receptionist</title>
         <meta charset="utf-8"/>
+        <title>Szálláshely adatainak beállítása | Virtual Receptionist</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>        
         <script src="../js/jquery-3.3.1.min.js" type="text/javascript"></script>
