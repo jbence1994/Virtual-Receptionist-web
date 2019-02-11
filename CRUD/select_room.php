@@ -18,7 +18,7 @@ $rooms = "<table>"
         . "<th>Kapacitás</th>"
         . "</tr>";
 
-while ($row = $result->fet_assoc()) {
+while ($row = $result->fetch_assoc()) {
     $rooms .= "<tr>"
             . "<td>{$row['ID']}</td>"
             . "<td>{$row['Name']}</td>"
