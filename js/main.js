@@ -5,14 +5,12 @@ $(document).ready(function () {
      */
     $('[data-toggle="tooltip"]').tooltip();
 
-    /**
-     * Szobák kiolvasása adatbázisból
-     */
     getRooms();
+    getAccomodationData();
 });
 
 /**
- * Adatbázis leolvasó metódus
+ * Szobák adatait adatbázisból leolvasó metódus
  */
 function getRooms() {
     $.ajax({
@@ -23,6 +21,19 @@ function getRooms() {
         },
         error: function (xhr) {
             alert(xhr.status);
+        }
+    });
+}
+
+/**
+ * Szálláshely adatait adatbázisból leolvasó metódus
+ */
+function getAccomodationData() {
+    $.ajax({
+        url: "../CRUD/select_accomodation.php",
+        method: "post",
+        success: function (answer) {
+            $('').html(answer);
         }
     });
 }
