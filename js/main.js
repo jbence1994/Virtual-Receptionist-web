@@ -4,11 +4,9 @@ $(document).ready(function () {
      * Tooltip -> Bootstrap
      */
     $('[data-toggle="tooltip"]').tooltip();
-
     getRooms();
     getAccomodationData();
 });
-
 /*
  * Szobák adatait adatbázisból leolvasó metódus
  */
@@ -33,7 +31,9 @@ function getAccomodationData() {
         url: "../CRUD/select_accomodation.php",
         method: "post",
         success: function (answer) {
-            $('').html(answer);
+            $('#box').html(answer);
+        }, error: function (xhr) {
+            alert(xhr.status);
         }
     });
 }

@@ -14,17 +14,7 @@
     </head>
     <body>
         <?php require_once('../templates/navbar.html'); ?>
-        <div id="box">
-            <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Szálláshely azonosító" required/>
-            <input type="text" name="companyName" id="companyName" class="form-control" placeholder="Cégnév" required/>
-            <input type="text" name="contact" id="contact" class="form-control" placeholder="Kapcsolattartó" required/>
-            <input type="text" name="VATNumber" id="VATNumber" class="form-control" placeholder="Adószám" required/>
-            <input type="text" name="headquarters" id="headquarters" class="form-control" placeholder="Székhely" required/>
-            <input type="text" name="site" id="site" class="form-control" placeholder="Telephely" required/>
-            <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="Telefonszám" required/>
-            <input type="text" name="emailAddress" id="emailAddress" class="form-control" placeholder="E-mail cím" required/>
-            <input type="submit" name="updateCompanyData" id="updateCompanyData" class="btn btn-primary" value="Adatok módosítása"/>
-        </div>
+        <div id="box"></div>
         <?php require_once('../templates/footer.html'); ?>
     </body>
 </html>
