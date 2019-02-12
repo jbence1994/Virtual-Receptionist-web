@@ -1,7 +1,7 @@
 body{
     background-color: #c4e3f3;
 }
-#login{
+#login, #updateCompanyData{
     width: 100%;
     margin-bottom: 10px;
 }
