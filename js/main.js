@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    /**
+    /*
      * Tooltip -> Bootstrap
      */
     $('[data-toggle="tooltip"]').tooltip();
@@ -9,7 +9,7 @@ $(document).ready(function () {
     getAccomodationData();
 });
 
-/**
+/*
  * Szobák adatait adatbázisból leolvasó metódus
  */
 function getRooms() {
@@ -25,7 +25,7 @@ function getRooms() {
     });
 }
 
-/**
+/*
  * Szálláshely adatait adatbázisból leolvasó metódus
  */
 function getAccomodationData() {
