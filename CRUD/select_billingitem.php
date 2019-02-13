@@ -1,6 +1,7 @@
 <?php
 
 require_once('../config/connect.php');
+require_once('../templates/modal_delete.html');
 
 $sql = "SELECT billing_item.ID, billing_item.BillingItemName, billing_item_category.BillingItemCategoryName, billing_item.Price FROM billing_item, billing_item_category WHERE billing_item.Category = billing_item_category.ID;";
 $result = $connection->query($sql);
@@ -23,7 +24,7 @@ while ($row = $result->fetch_assoc()) {
             . "<td contenteditable>{$row['BillingItemName']}</td>"
             . "<td contenteditable>{$row['BillingItemCategoryName']}</td>"
             . "<td contenteditable>{$row['Price']}</td>"
-            . "<td><button class='btn btn-primary' class='delete' id='{$row['ID']}'>Tétel törlése</button></td>"
+            . "<td><button class='btn btn-primary' class='delete' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete'>Tétel törlése</button></td>"
             . "<td><button class='btn btn-primary' class='update' id='{$row['ID']}'>Tétel módosítása</button></td>"
             . "</tr>";
 }
