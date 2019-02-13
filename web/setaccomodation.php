@@ -14,7 +14,7 @@
     </head>
     <body>
         <?php require_once('../templates/navbar.html'); ?>
-        <div id="box"></div>
+        <div class="box" id="accomodatin_data_box"></div>
         <?php require_once('../templates/footer.html'); ?>
     </body>
 </html>

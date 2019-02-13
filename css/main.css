@@ -14,13 +14,13 @@ footer{
     bottom: 0;
     background-color: #222;
 }
-#box{
+.box{
     padding: 20px;
     margin: 0 auto;
     background-color: #80bdff;
     width: 40%;
 }
-#box h3{
+.box h3{
     text-align: center;
     margin-bottom: 25px;
     color: black;

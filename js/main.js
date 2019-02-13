@@ -31,7 +31,7 @@ function getAccomodationData() {
         url: "../CRUD/select_accomodation.php",
         method: "post",
         success: function (answer) {
-            $('#box').html(answer);
+            $('#accomodatin_data_box').html(answer);
         }, error: function (xhr) {
             alert(xhr.status);
         }
