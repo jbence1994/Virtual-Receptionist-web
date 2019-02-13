@@ -11,7 +11,6 @@ if (!$result) {
 
 $rooms = "<table class='table table-striped' id='room_table'>"
         . "<tr>"
-        . "<th>ID</th>"
         . "<th>Szoba neve</th>"
         . "<th>Szobaszám</th>"
         . "<th>Szobakategória</th>"
@@ -22,7 +21,6 @@ $rooms = "<table class='table table-striped' id='room_table'>"
 
 while ($row = $result->fetch_assoc()) {
     $rooms .= "<tr>"
-            . "<td>{$row['ID']}</td>"
             . "<td contenteditable>{$row['Name']}</td>"
             . "<td contenteditable>{$row['Number']}</td>"
             . "<td contenteditable>{$row['CategoryName']}</td>"
