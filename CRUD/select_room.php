@@ -9,7 +9,7 @@ if (!$result) {
     die("Hiba az olvasás közben");
 }
 
-$rooms = "<table class='table table-striped' id='room_table'>"
+$rooms = "<table class='table table-striped' id='editable_table'>"
         . "<tr>"
         . "<th>Szoba neve</th>"
         . "<th>Szobaszám</th>"
@@ -25,8 +25,8 @@ while ($row = $result->fetch_assoc()) {
             . "<td contenteditable>{$row['Number']}</td>"
             . "<td contenteditable>{$row['CategoryName']}</td>"
             . "<td contenteditable>{$row['Capacity']}</td>"
-            . "<td><button class='btn btn-primary' class='delete' id='{$row['ID']}'>Törlés</button></td>"
-            . "<td><button class='btn btn-primary' class='update' id='{$row['ID']}'>Módosítás</button></td>"
+            . "<td><button class='btn btn-primary' class='delete' id='{$row['ID']}'>Szoba törlése</button></td>"
+            . "<td><button class='btn btn-primary' class='update' id='{$row['ID']}'>Szoba módosítása</button></td>"
             . "</tr>";
 }
 echo $rooms;
