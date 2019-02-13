@@ -1,4 +1,4 @@
-<?php require_once('../config/isloggedin.php'); ?>
+<?php require_once('../config/session_exists.php'); ?>
 <!DOCTYPE html>
 <html lang="hu">
     <head>
