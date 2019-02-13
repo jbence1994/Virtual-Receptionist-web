@@ -6,7 +6,12 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
     getRooms();
     getAccomodationData();
+    
+    
+    
+    
 });
+
 /*
  * Szobák adatait adatbázisból leolvasó metódus
  */
@@ -32,7 +37,8 @@ function getAccomodationData() {
         method: "post",
         success: function (answer) {
             $('#accomodation_data_box').html(answer);
-        }, error: function (xhr) {
+        },
+        error: function (xhr) {
             alert(xhr.status);
         }
     });
