@@ -9,13 +9,15 @@ if (!$result) {
     die("Hiba az olvasás közben");
 }
 
-$rooms = "<table id='room_table'>"
+$rooms = "<table class='table table-striped' id='room_table'>"
         . "<tr>"
         . "<th>ID</th>"
         . "<th>Szoba neve</th>"
         . "<th>Szobaszám</th>"
         . "<th>Szobakategória</th>"
         . "<th>Kapacitás (fő)</th>"
+        . "<th></th>"
+        . "<th></th>"
         . "</tr>";
 
 while ($row = $result->fetch_assoc()) {
@@ -37,7 +39,7 @@ $rooms = "<tr>"
         . "<td class='editable' id='number' contenteditable></td>"
         . "<td class='editable' id='category' contenteditable></td>"
         . "<td class='editable' id='capacity' contenteditable></td>"
-        . "<td colspan='2'><button class='btn btn-primary' class='insert'>Hozzáadás</button></td>"
+        . "<td colspan='2'><button class='btn btn-primary' class='insert'>Új szoba hozzáadása</button></td>"
         . "</tr>";
 $rooms .= "</table>";
 echo $rooms;
