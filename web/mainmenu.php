@@ -7,23 +7,13 @@
     </head>
     <body>
         <?php require_once('../templates/navbar.html'); ?>
-        <section>
-            <article>
-                <h1>Szálláshely adatainak beállítása</h1>
-            </article>
-            <article>
-                <h1>Szobák beállítása</h1>
-            </article>
-            <article>
-                <h1>Számlázási tételek beállítása</h1>
-            </article>
-            <article>
-                <h1>Naptár</h1>
-            </article>
-            <article>
-                <h1>Naplózás</h1>
-            </article>
-        </section>
+        <div class="container">
+            <section>
+                <article>
+                    <h1>Üdvözöljük a Virtual Receptionist adminisztrációs felületén!</h1>
+                </article>
+            </section>
+        </div>
         <?php require_once('../templates/footer.html'); ?>
     </body>
 </html>
