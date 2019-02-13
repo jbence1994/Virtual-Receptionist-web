@@ -10,7 +10,7 @@ if (!$result) {
 }
 
 while ($row = $result->fetch_assoc()) {
-    $accomodation = "<input type='text' name='accomodationID' id='accomodationID' class='form-control' placeholder='Szálláshely azonosító' value='{$row['AccomodationName']}' required/>"
+    $accomodation = "<input type='text' name='accomodationName' id='accomodationName' class='form-control' placeholder='Szálláshely neve' value='{$row['AccomodationName']}' required/>"
             . "<input type='text' name='companyName' id='companyName' class='form-control' placeholder='Cégnév' value='{$row['CompanyName']}' required/>"
             . "<input type='text' name='contact' id='contact' class='form-control' placeholder='Kapcsolattartó' value='{$row['Contact']}' required/>"
             . "<input type='text' name='VATNumber' id='VATNumber' class='form-control' placeholder='Adószám' value='{$row['VATNumber']}' required/>"
