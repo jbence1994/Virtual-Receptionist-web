@@ -2,9 +2,9 @@
 
 require_once('../config/connect.php');
 
-if (isset($_POST['del'])) {
-    $id = $_POST['del'];
-    $sql = "DELETE FROM room WHERE ID = '$id' ";
+if (isset($_POST['???'])) {
+    $id = $_POST['???'];
+    $sql = "DELETE FROM room WHERE ID = '$id';";
 
     $result = $connection->query($sql);
 

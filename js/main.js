@@ -8,7 +8,9 @@ $(document).ready(function () {
     getAccomodationData();
     getBillingItems();
 
-
+    $(document).on("click", "#modal_delete", function () {
+        deleteRoom();
+    });
 });
 
 /*
@@ -50,6 +52,28 @@ function getBillingItems() {
         method: "get",
         success: function (answer) {
             $('#billingitems').html(answer);
+        },
+        error: function (xhr) {
+            alert(xhr.status);
+        }
+    });
+}
+/*
+ * Kijelölt szobát kitörlő metódus
+ */
+function deleteRoom() {
+    let id = $('');
+
+    $.ajax({
+        url: "../CRUD/delete_room.php",
+        method: "post",
+        dataType: "TEXT",
+        data:
+                {
+                    id: id
+                },
+        success: function () {
+            getRooms();
         },
         error: function (xhr) {
             alert(xhr.status);
