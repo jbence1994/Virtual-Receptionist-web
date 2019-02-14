@@ -70,7 +70,7 @@ function deleteRoom() {
         dataType: "TEXT",
         data:
                 {
-                    id: id
+                    delete: id
                 },
         success: function () {
             getRooms();
