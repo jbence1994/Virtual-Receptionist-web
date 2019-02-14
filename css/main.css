@@ -17,7 +17,7 @@ footer{
 .box{
     padding: 20px;
     margin: 0 auto;
-    background-color: #80bdff;
+    background-color: #b3d7ff;
     width: 40%;
 }
 .box h3{
@@ -70,5 +70,6 @@ img{
     text-align: center;
 }
 .content{
-    padding: 80px;    
+    padding: 80px;
+    margin: 0 auto;
 }
