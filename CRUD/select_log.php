@@ -13,7 +13,7 @@ $logs = "<table class='table table-striped' id='editable_table'>"
         . "<tr>"
         . "<th>Kliens számítógép</th>"
         . "<th>Operációs rendszer</th>"
-        . "<th>Bejelentlezés dátuma</th>"
+        . "<th>Bejelentkezés dátuma</th>"
         . "<th>Kijelentkezés dátuma</th>"
         . "</tr>";
 
