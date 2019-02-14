@@ -31,9 +31,9 @@ while ($row = $result->fetch_assoc()) {
 echo $billingItems;
 
 $billingItems = "<tr>"
-        . "<td class='editable' id='billingitem' contenteditable></td>"
-        . "<td class='editable' id='category' contenteditable></td>"
-        . "<td class='editable' id='price' contenteditable></td>"
+        . "<td class='editable' id='billingitem' contenteditable><i>Tétel neve</i></td>"
+        . "<td class='editable' id='category' contenteditable><i>Kategória</i></td>"
+        . "<td class='editable' id='price' contenteditable><i>Ár (Forint)</i></td>"
         . "<td colspan='2'><button class='btn btn-primary' class='insert'>Új tétel hozzáadása</button></td>"
         . "</tr>";
 $billingItems .= "</table>";
