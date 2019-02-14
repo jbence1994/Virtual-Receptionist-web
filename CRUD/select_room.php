@@ -1,7 +1,7 @@
 <?php
 
 require_once('../config/connect.php');
-require_once('../templates/modal_delete.html');
+require_once('../templates/modal_delete_room.html');
 
 $sql = "SELECT room.ID, room.Name, room.Number, room_category.CategoryName, room.Capacity FROM room, room_category WHERE room.Category=room_category.ID ORDER BY ID;";
 $result = $connection->query($sql);
@@ -26,7 +26,7 @@ while ($row = $result->fetch_assoc()) {
             . "<td contenteditable>{$row['Number']}</td>"
             . "<td contenteditable>{$row['CategoryName']}</td>"
             . "<td contenteditable>{$row['Capacity']}</td>"
-            . "<td><button class='btn btn-primary' class='delete' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete'>Szoba törlése</button></td>"
+            . "<td><button class='btn btn-primary' class='delete' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete_room'>Szoba törlése</button></td>"
             . "<td><button class='btn btn-primary' class='update' id='{$row['ID']}'>Szoba módosítása</button></td>"
             . "</tr>";
 }
