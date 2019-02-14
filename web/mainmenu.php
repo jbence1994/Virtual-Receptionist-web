@@ -7,12 +7,14 @@
     </head>
     <body>
         <?php require_once('../templates/navbar.html'); ?>
-        <div class="container">
-            <section>
-                <article>
-                    <h1>Üdvözöljük a Virtual Receptionist adminisztrációs felületén!</h1>
-                </article>
-            </section>
+        <div class="content">
+            <div class="container-fluid">
+                <section>
+                    <article>
+                        <h1>Üdvözöljük a Virtual Receptionist adminisztrációs felületén!</h1>
+                    </article>
+                </section>
+            </div>
         </div>
         <?php require_once('../templates/footer.html'); ?>
     </body>
