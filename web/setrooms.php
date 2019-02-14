@@ -7,7 +7,9 @@
     </head>
     <body>
         <?php require_once('../templates/navbar.html'); ?>
-        <div class="container-fluid" id="rooms"></div>
+        <div class="content">
+            <div class="container-fluid" id="rooms"></div>
+        </div>
         <?php require_once('../templates/footer.html'); ?>
     </body>
 </html>

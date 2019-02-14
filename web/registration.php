@@ -5,6 +5,9 @@
         <?php require_once('../templates/head.html'); ?>
     </head>
     <body>
-        <?php require_once('../templates/footer.html'); ?>
+        <div class="content">
+            <?php require_once('../templates/footer.html'); ?>
+        </div>
+
     </body>
 </html>
