@@ -7,6 +7,7 @@
     </head>
     <body>
         <?php require_once('../templates/navbar.html'); ?>
+        <div id="logs"></div>
         <?php require_once('../templates/footer.html'); ?>
     </body>
 </html>

@@ -10,7 +10,7 @@ if (!$result) {
     die("Hiba az olvasás közben");
 }
 
-$rooms = "<table class='table table-striped' id='editable_table'>"
+$billingItems = "<table class='table table-striped' id='editable_table'>"
         . "<tr>"
         . "<th>Tétel</th>"
         . "<th>Kategória</th>"
@@ -20,7 +20,7 @@ $rooms = "<table class='table table-striped' id='editable_table'>"
         . "</tr>";
 
 while ($row = $result->fetch_assoc()) {
-    $rooms .= "<tr>"
+    $billingItems .= "<tr>"
             . "<td contenteditable>{$row['BillingItemName']}</td>"
             . "<td contenteditable>{$row['BillingItemCategoryName']}</td>"
             . "<td contenteditable>{$row['Price']}</td>"
@@ -28,15 +28,15 @@ while ($row = $result->fetch_assoc()) {
             . "<td><button class='btn btn-primary' class='update' id='{$row['ID']}'>Tétel módosítása</button></td>"
             . "</tr>";
 }
-echo $rooms;
+echo $billingItems;
 
-$rooms = "<tr>"
+$billingItems = "<tr>"
         . "<td class='editable' id='billingitem' contenteditable></td>"
         . "<td class='editable' id='category' contenteditable></td>"
         . "<td class='editable' id='price' contenteditable></td>"
         . "<td colspan='2'><button class='btn btn-primary' class='insert'>Új tétel hozzáadása</button></td>"
         . "</tr>";
-$rooms .= "</table>";
-echo $rooms;
+$billingItems .= "</table>";
+echo $billingItems;
 
 $connection->close();

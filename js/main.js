@@ -7,6 +7,7 @@ $(document).ready(function () {
     getRooms();
     getAccomodationData();
     getBillingItems();
+    getLogs();
 
     $(document).on("click", "#modal_delete", function () {
         deleteRoom();
@@ -74,6 +75,21 @@ function deleteRoom() {
                 },
         success: function () {
             getRooms();
+        },
+        error: function (xhr) {
+            alert(xhr.status);
+        }
+    });
+}
+/*
+ * Naplózásokat adatbázisból leolvasó metódus
+ */
+function getLogs() {
+    $.ajax({
+        url: "../CRUD/select_log.php",
+        method: "get",
+        success: function (answer) {
+            $('#logs').html(answer);
         },
         error: function (xhr) {
             alert(xhr.status);
