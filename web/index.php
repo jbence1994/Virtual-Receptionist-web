@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['accomodation'])) {
+    header('Location: mainmenu.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="hu">
     <head>
