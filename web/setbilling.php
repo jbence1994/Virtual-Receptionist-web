@@ -10,6 +10,6 @@
         <div class="content">
             <div class="container-fluid" id="billingitems"></div>
         </div>
-        <?php require_once('../templates/footer.html'); ?>
+        <?php require_once('../templates/footer.php'); ?>
     </body>
 </html>

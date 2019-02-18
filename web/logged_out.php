@@ -6,6 +6,6 @@
     </head>
     <body>
         <?php require_once('../templates/logged_out.html'); ?>
-        <?php require_once('../templates/footer.html'); ?>
+        <?php require_once('../templates/footer.php'); ?>
     </body>
 </html>

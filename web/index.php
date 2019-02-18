@@ -34,6 +34,6 @@ if (isset($_SESSION['accomodation'])) {
                 </a>
             </div>
         </div>
-        <?php require_once('../templates/footer.html'); ?>
+        <?php require_once('../templates/footer.php'); ?>
     </body>
 </html>

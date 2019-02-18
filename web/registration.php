@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="content">
-            <?php require_once('../templates/footer.html'); ?>
+            <?php require_once('../templates/footer.php'); ?>
         </div>
 
     </body>
