@@ -14,7 +14,7 @@ if (isset($_SESSION['accomodation'])) {
     <body>
         <div class="container">
             <div class="logo">
-                <img src="../img/vr-logo.jpg" alt="logo"/>
+                <img src="../img/virtual_receptionist_mask.png" alt="logo"/>
             </div>
             <form method="post" action="login.php">
                 <div class="box" class="form-group" id="login-box">
