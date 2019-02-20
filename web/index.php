@@ -13,7 +13,7 @@ if (isset($_SESSION['accomodation'])) {
     </head>
     <body>
         <div class="container">
-            <img id="logo" src="../img/virtual_receptionist_mask.png" alt="logo"/>
+            <img id="logo" src="../img/virtual_receptionist_mask.png" alt="virtual_receptionist_logo"/>
             <form method="post" action="login.php">
                 <div class="box" class="form-group" id="login-box">
                     <h3>Adminisztrációs felület</h3>

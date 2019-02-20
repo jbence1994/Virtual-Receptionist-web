@@ -1,9 +1,6 @@
 body{
     background-color: #c4e3f3;
 }
-#main_logo{
-    width: 30%;
-}
 #login, #updateCompanyData{
     width: 100%;
     margin-bottom: 10px;
@@ -49,10 +46,6 @@ img{
     vertical-align: middle;
     margin-bottom: 40px;
 }
-#logo{
-    width: 30%;
-    margin: 0 auto;
-}
 #registration{
     text-align: center;
     margin-top: 20px;
@@ -74,4 +67,11 @@ img{
 .content{
     padding: 80px;
     margin: 0 auto;
+}
+#logo{
+    margin: 0 auto;
+    width: 30%;
+    display: block;
+    background-position: center center;
+    padding-top: 20px;
 }
