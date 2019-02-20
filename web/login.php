@@ -8,6 +8,11 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
 
     $sql = "SELECT accomodation_profile.AccomodationID, accomodation_profile.Password FROM accomodation_profile WHERE accomodation_profile.AccomodationID = '$accomodationID' AND accomodation_profile.Password = '$password';";
+
+    /*
+     * Paraméterezett query !!!
+     */
+
     $result = $connection->query($sql);
 
     if ($result->num_rows == 1) {
