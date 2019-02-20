@@ -4,23 +4,35 @@ session_start();
 require_once('../config/connect.php');
 
 if (isset($_POST['login'])) {
+
     $accomodationID = $_POST['accomodationID'];
     $password = $_POST['password'];
 
-    $sql = "SELECT accomodation_profile.AccomodationID, accomodation_profile.Password FROM accomodation_profile WHERE accomodation_profile.AccomodationID = '$accomodationID' AND accomodation_profile.Password = '$password';";
+    $sql = "SELECT accomodation_profile.AccomodationID, accomodation_profile.Password FROM accomodation_profile WHERE accomodation_profile.AccomodationID = ? AND accomodation_profile.Password = ?;";
 
-    /*
-     * Paraméterezett query !!!
-     */
+    $statement = $connection->prepare($sql);
+    $statement->bind_param('ss', $accomodationID, $password);
+    $statement->execute();
+    $statement->store_result();
 
-    $result = $connection->query($sql);
+    if ($statement->num_rows == 1) {
 
-    if ($result->num_rows == 1) {
-        $row = $result->fetch_row();
-        $_SESSION['accomodation'] = $row[0];
+        /*
+         * Sikeres bejelentkezés
+         */
+
+        $statement->bind_result($accomodationID, $password);
+        $statement->fetch();
+
+        $_SESSION['accomodation'] = $accomodationID;
+
         header('Location: mainmenu.php');
     } else {
-        $_SESSION['login_error'] = "Helytelen felhasználónév vagy jelszó!";
+
+        /*
+         * Sikertelen bejelentkezés
+         */
+
         header('Location: index.php');
     }
 }
