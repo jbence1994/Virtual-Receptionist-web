@@ -26,6 +26,7 @@ if (isset($_POST['login'])) {
 
         $_SESSION['accomodation'] = $accomodationID;
 
+        $statement->close();
         header('Location: mainmenu.php');
     } else {
 
