@@ -1,6 +1,26 @@
-<?php require_once('../config/connect.php'); ?>
+<?php
+require_once('../config/connect.php');
+
+if (isset($_POST['login'])) {
+
+    $accomodationID = $_POST['accomodationID'];
+
+    $sql = "SELECT accomodation.AccomodationName, accomodation.VATNumber FROM accomodation";
+    $result = $connection->query($sql);
+
+    if (!$result) {
+        die();
+    }
+
+    while ($row = $result->fetch_assoc()) {
+
+        $accomodationName = $row["AccomodationName"];
+        $vat = $row["VATNumber"];
+    }
+}
+?>
 <nav class="navbar bg-dark navbar-dark sticky-top">
-    <a class="navbar-brand" href="../web/mainmenu.php">Virtual Receptionist konfigurációs felület (<?php echo($accomodationName . ' / ' . $vat . '/'); ?>)</a>
+    <a class="navbar-brand" href="../web/mainmenu.php">Virtual Receptionist konfigurációs felület (<?=$accomodationName; ?>)</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
