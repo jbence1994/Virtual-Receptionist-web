@@ -11,7 +11,7 @@
             <div class="container-fluid">
                 <section>
                     <article>
-                        <h1>Üdvözöljük a Virtual Receptionist adminisztrációs felületén!</h1>
+                        <h1>Üdvözöljük a Virtual Receptionist konfigurációs felületén!</h1>
                         <h5>A navigációs sáv segítségével kiválaszthatja a szükséges menüpontokat a konfigurációhoz!</h5>
                     </article>
                 </section>

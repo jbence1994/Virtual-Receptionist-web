@@ -16,7 +16,7 @@ if (isset($_SESSION['accomodation'])) {
             <img id="logo" src="../img/virtual_receptionist_mask.png" alt="virtual_receptionist_logo"/>
             <form method="post" action="login.php">
                 <div class="box" class="form-group" id="login-box">
-                    <h3>Adminisztrációs felület</h3>
+                    <h4>Konfigurációs felület</h4>
                     <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Szálláshely azonosító" required/>
                     <input type="password" name="password" id="password" class="form-control" placeholder="Jelszó" required/>
                     <input type="submit" name="login" id="login" class="btn btn-primary" value="Bejelentkezés"/>
