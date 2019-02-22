@@ -26,6 +26,16 @@ if (isset($_POST['login'])) {
 
         $_SESSION['accomodation'] = $accomodationID;
 
+        $sql_getData = "SELECT accomodation.AccomodationName, accomodation.VATNumber FROM accomodation, accomodation_profile WHERE accomodation.ID = '{$accomodationID}'";
+
+        $result = $connection->query($sql_getData);
+
+        while ($row = $result->fetch_assoc()) {
+
+            $accomodationName = $row["AccomodationName"];
+            $vat = $row["VATNumber"];
+        }
+
         $statement->close();
         header('Location: mainmenu.php');
     } else {
