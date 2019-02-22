@@ -21,7 +21,7 @@ if (isset($_SESSION['accomodation'])) {
                     <input type="password" name="password" id="password" class="form-control" placeholder="Jelszó" required/>
                     <input type="submit" name="login" id="login" class="btn btn-primary" value="Bejelentkezés"/>
                     <span><input type="checkbox" value=""/>Maradjon bejelentkezve</span>
-                    <a id="forgotPassword" href="#" data-toggle="tooltip" data-placement="right" title="Itt megadhat újat!">
+                    <a id="forgotPassword" href="change_password.php" data-toggle="tooltip" data-placement="right" title="Itt megadhat újat!">
                         <span>Elfelejtette jelszavát?</span>
                     </a>
                 </div>
