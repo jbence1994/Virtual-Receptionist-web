@@ -6,7 +6,7 @@
         <?php require_once('../templates/head.html'); ?>
     </head>
     <body>
-        <?php require_once('../templates/navbar.html'); ?>
+        <?php require_once('../templates/navbar.php'); ?>
         <div class="content">
             <div class="box" id="accomodation_data_box"></div>
         </div>
