@@ -26,7 +26,7 @@ if (isset($_POST['login'])) {
 
         $_SESSION['accomodation'] = $accomodationID;
 
-        $sql_getData = "SELECT accomodation.AccomodationName, accomodation.VATNumber FROM accomodation, accomodation_profile WHERE accomodation.ID = '{$accomodationID}'";
+        $sql_getData = "SELECT accomodation.AccomodationName, accomodation.VATNumber FROM accomodation WHERE accomodation.ID = '{$accomodationID}'";
 
         $result = $connection->query($sql_getData);
 
