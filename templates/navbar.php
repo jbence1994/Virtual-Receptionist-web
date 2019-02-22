@@ -1,5 +1,6 @@
+<?php require_once('../config/connect.php'); ?>
 <nav class="navbar bg-dark navbar-dark sticky-top">
-    <a class="navbar-brand" href="../web/mainmenu.php">Virtual Receptionist adminisztrációs felület</a>
+    <a class="navbar-brand" href="../web/mainmenu.php">Virtual Receptionist konfigurációs felület (<?php echo($accomodationName . ' / ' . $vat . '/'); ?>)</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
