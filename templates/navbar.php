@@ -36,9 +36,6 @@ if (isset($_POST['login'])) {
                 <a class="nav-link" href="../web/setaccomodation.php">Szálláshely adatainak beállítása</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../web/log.php">Naplózás megtekintése</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="../web/logout.php">Kijelentkezés</a>
             </li>
         </ul>
