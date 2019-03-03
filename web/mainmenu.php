@@ -11,8 +11,10 @@
             <div class="container-fluid">
                 <section>
                     <article>
-                        <h1>Üdvözöljük a Virtual Receptionist konfigurációs felületén!</h1>
-                        <h5>A navigációs sáv segítségével kiválaszthatja a szükséges menüpontokat szálláshelye adatainak beállításához!</h5>
+                        <div class="text-center">
+                            <h1>Üdvözöljük a Virtual Receptionist konfigurációs felületén!</h1>
+                            <h5>A navigációs sáv segítségével kiválaszthatja a szükséges menüpontokat szálláshelye adatainak beállításához!</h5>
+                        </div>
                     </article>
                 </section>
             </div>
