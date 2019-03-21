@@ -20,15 +20,14 @@ if (isset($_SESSION['accomodation'])) {
                     <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Szálláshely azonosító" required/>
                     <input type="password" name="password" id="password" class="form-control" placeholder="Jelszó" required/>
                     <input type="submit" name="login" id="login" class="btn btn-primary" value="Bejelentkezés"/>
-                    <span><input type="checkbox" value=""/>Maradjon bejelentkezve</span>
-                    <a id="forgotPassword" href="change_password.php" data-toggle="tooltip" data-placement="right" title="Itt megadhat újat!">
-                        <span>Elfelejtette jelszavát?</span>
-                    </a>
                 </div>
             </form>
             <div id="registration">
-                <a href="registration.php" data-toggle="tooltip" data-placement="right" title="Itt megteheti!">
-                    <span>Még nem regisztrálta szálláshelyét?</span>
+                <a href="registration.php" data-toggle="tooltip" data-placement="top" title="Itt megteheti!">
+                    <p>Még nem regisztrálta szálláshelyét?</p>
+                </a>
+                <a id="forgotPassword" href="change_password.php" data-toggle="tooltip" data-placement="bottom" title="Itt megadhat újat!">
+                    <p>Elfelejtette jelszavát?</p>
                 </a>
             </div>
         </div>
