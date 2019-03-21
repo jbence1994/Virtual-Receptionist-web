@@ -39,12 +39,6 @@ a:visited, a:link, a:active{
 #registration a:hover{
     color: #7092be;
 }
-#alert{
-    vertical-align: middle;
-    margin-bottom: 40px;
-    width: 400px;
-    height: 400px;
-}
 #registration{
     text-align: center;
     margin-top: 20px;
