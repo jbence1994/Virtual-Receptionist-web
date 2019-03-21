@@ -1,11 +1,9 @@
 <?php
 require_once('../config/connect.php');
 
-if (isset($_POST['login'])) {
+if (isset($_SESSION['accomodation'])) {
 
-    $accomodationID = $_POST['accomodationID'];
-
-    $sql = "SELECT accomodation.AccomodationName, accomodation.VATNumber FROM accomodation";
+    $sql = "SELECT accomodation_profile.AccomodationID, accomodation.AccomodationName, accomodation.VATNumber FROM accomodation, accomodation_profile";
     $result = $connection->query($sql);
 
     if (!$result) {
@@ -14,13 +12,19 @@ if (isset($_POST['login'])) {
 
     while ($row = $result->fetch_assoc()) {
 
+        $acc_id = $row["AccomodationID"];
         $accomodationName = $row["AccomodationName"];
         $vat = $row["VATNumber"];
     }
 }
 ?>
 <nav class="navbar bg-dark navbar-dark sticky-top">
-    <a class="navbar-brand" href="../web/mainmenu.php">Virtual Receptionist konfigurációs felület (<?=$accomodationName; ?>)</a>
+    <a class="navbar-brand" href="../web/mainmenu.php">Virtual Receptionist konfigurációs felület
+        <br/><br/>
+        <?= $accomodationName . ' (' . $vat . ')'; ?>
+        <br/>
+        <?= 'Szálláshely azonosító: ' . $acc_id; ?>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
