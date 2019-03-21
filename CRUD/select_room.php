@@ -33,10 +33,10 @@ while ($row = $result->fetch_assoc()) {
 echo $rooms;
 
 $rooms = "<tr>"
-        . "<td class='editable' id='name' contenteditable><i>Szoba elnevezése</i></td>"
-        . "<td class='editable' id='number' contenteditable><i>Szobaszám</i></td>"
-        . "<td class='editable' id='category' contenteditable><i>Kategória</i></td>"
-        . "<td class='editable' id='capacity' contenteditable><i>Kapacitás (fő)</i></td>"
+        . "<td class='editable' id='name' contenteditable></td>"
+        . "<td class='editable' id='number' contenteditable></td>"
+        . "<td class='editable' id='category' contenteditable></td>"
+        . "<td class='editable' id='capacity' contenteditable></td>"
         . "<td colspan='2'><button class='btn btn-primary' class='insert'>Új szoba hozzáadása</button></td>"
         . "</tr>";
 $rooms .= "</table>";
