@@ -24,7 +24,7 @@ while ($row = $result->fetch_assoc()) {
     $rooms .= "<tr>"
             . "<td contenteditable>{$row['Name']}</td>"
             . "<td contenteditable>{$row['Number']}</td>"
-            . "<td contenteditable>{$row['BillingItemName']}</td>"
+            . "<td><select class='browser-default custom-select'><option>{$row['BillingItemName']}</option></select></td>"
             . "<td contenteditable>{$row['Capacity']}</td>"
             . "<td><button class='btn btn-primary' class='delete' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete_room'>Szoba törlése</button></td>"
             . "<td><button class='btn btn-primary' class='update' id='{$row['ID']}'>Szoba módosítása</button></td>"
