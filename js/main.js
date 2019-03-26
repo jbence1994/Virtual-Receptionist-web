@@ -21,10 +21,6 @@ $(document).ready(function () {
         setAccomodationData();
     });
 
-    $(document).on("click", ".delete", function () {
-        deleteRoom();
-    });
-
     // jQuery események
 });
 
@@ -176,20 +172,8 @@ function deleteBillingItem() {
  * Kijelölt szobát adatbázisból törlő metódus
  */
 function deleteRoom() {
-    let id = $('#id');
     $.ajax({
-        url: "../crud/delete_room.php",
-        method: "post",
-        dataType: "TEXT",
-        data: {
-            "id": id
-        },
-        success: function () {
-            getRooms();
-        },
-        error: function (xhr) {
-            alert(xhr.status);
-        }
+        
     });
 }
 
