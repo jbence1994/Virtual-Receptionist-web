@@ -18,7 +18,7 @@ $(document).ready(function () {
          * submit alapértelmezett működése letitva, hogy ajax kéréssel történjen a módosítás
          */
         event.preventDefault();
-        setAccomodationData();
+        updateAccomodationData();
     });
 
     // jQuery események
