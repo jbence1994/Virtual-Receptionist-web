@@ -4,20 +4,16 @@ $(document).ready(function () {
      * Tooltip -> Bootstrap
      */
     $('[data-toggle="tooltip"]').tooltip();
-
     getRooms();
     getAccomodationData();
     getBillingItems();
-
     $(document).on("click", "#updateCompanyData", function () {
         setAccomodationData();
     });
-
     $(document).on("click", "#modal_delete", function () {
         deleteRoom();
     });
 });
-
 /*
  * Szobák adatait adatbázisból leolvasó metódus
  */
@@ -49,14 +45,34 @@ function getAccomodationData() {
     });
 }
 /*
- * Szálláshely adatait adatbázisban módosí metódus
+ * Szálláshely adatait adatbázisban módosító metódus
  */
 function setAccomodationData() {
+
+    let accomodationName = $('#accomodationName').text();
+    let companyName = $('#companyName').text();
+    let contact = $('#contact').text();
+    let VATNumber = $('#VATNumber').text();
+    let headquarters = $('#headquarters').text();
+    let site = $('#site').text();
+    let phoneNumber = $('#phoneNumber').text();
+    let emailAddress = $('#emailAddress').text();
+
     $.ajax({
         url: "../crud/update_accomodation.php",
         method: "post",
-        success: function (answer) {
-            $('#accomodation_data_box').html(answer);
+        data: {
+            "accomodationName": accomodationName,
+            "companyName": companyName,
+            "contact": contact,
+            "VATNumber": VATNumber,
+            "headquarters": headquarters,
+            "site": site,
+            "phoneNumber": phoneNumber,
+            "emailAddress": emailAddress
+        },
+        success: function () {
+            getAccomodationData();
         },
         error: function (xhr) {
             alert(xhr.status);
@@ -83,7 +99,6 @@ function getBillingItems() {
  */
 function deleteRoom() {
     let id = $('');
-
     $.ajax({
         url: "../crud/delete_room.php",
         method: "post",
