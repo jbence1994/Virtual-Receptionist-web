@@ -24,8 +24,8 @@ while ($row = $result->fetch_assoc()) {
             . "<td contenteditable>{$row['BillingItemName']}</td>"
             . "<td contenteditable>{$row['Price']}</td>"
             . "<td><select class='browser-default custom-select'><option>{$row['BillingItemCategoryName']}</option></select></td>"
-            . "<td><input type='submit' class='btn btn-primary' class='delete' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete_billingitem' value='Tétel törlése'/></td>"
-            . "<td><input type='submit' class='btn btn-primary' class='update' id='{$row['ID']}' value='Tétel módosítása'/></td>"
+            . "<td><input type='submit' class='btn btn-primary' class='delete_billingitem' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete_billingitem' value='Tétel törlése'/></td>"
+            . "<td><input type='submit' class='btn btn-primary' class='update_billingitem' id='{$row['ID']}' value='Tétel módosítása'/></td>"
             . "</tr>";
 }
 echo $billingItems;
