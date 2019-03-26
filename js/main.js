@@ -4,15 +4,15 @@ $(document).ready(function () {
      * Tooltip -> Bootstrap
      */
     $('[data-toggle="tooltip"]').tooltip();
-    
+
     getRooms();
     getAccomodationData();
     getBillingItems();
-    
+
     $(document).on("click", "#updateCompanyData", function () {
         setAccomodationData();
     });
-    
+
     $(document).on("click", "#modal_delete", function () {
         deleteRoom();
     });
@@ -107,10 +107,9 @@ function deleteRoom() {
         url: "../crud/delete_room.php",
         method: "post",
         dataType: "TEXT",
-        data:
-                {
-                    delete: id
-                },
+        data: {
+            delete: id
+        },
         success: function () {
             getRooms();
         },
