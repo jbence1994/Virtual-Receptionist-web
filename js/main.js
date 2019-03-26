@@ -4,9 +4,14 @@ $(document).ready(function () {
      * Tooltip -> Bootstrap
      */
     $('[data-toggle="tooltip"]').tooltip();
+
     getRooms();
     getAccomodationData();
     getBillingItems();
+
+    $(document).on("click", "#updateCompanyData", function () {
+        setAccomodationData();
+    });
 
     $(document).on("click", "#modal_delete", function () {
         deleteRoom();
@@ -18,7 +23,7 @@ $(document).ready(function () {
  */
 function getRooms() {
     $.ajax({
-        url: "../CRUD/select_room.php",
+        url: "../crud/select_room.php",
         method: "get",
         success: function (answer) {
             $('#rooms').html(answer);
@@ -33,8 +38,23 @@ function getRooms() {
  */
 function getAccomodationData() {
     $.ajax({
-        url: "../CRUD/select_accomodation.php",
+        url: "../crud/select_accomodation.php",
         method: "get",
+        success: function (answer) {
+            $('#accomodation_data_box').html(answer);
+        },
+        error: function (xhr) {
+            alert(xhr.status);
+        }
+    });
+}
+/*
+ * Szálláshely adatait adatbázisban módosí metódus
+ */
+function setAccomodationData() {
+    $.ajax({
+        url: "../crud/update_accomodation.php",
+        method: "post",
         success: function (answer) {
             $('#accomodation_data_box').html(answer);
         },
@@ -48,7 +68,7 @@ function getAccomodationData() {
  */
 function getBillingItems() {
     $.ajax({
-        url: "../CRUD/select_billingitem.php",
+        url: "../crud/select_billingitem.php",
         method: "get",
         success: function (answer) {
             $('#billingitems').html(answer);
@@ -65,7 +85,7 @@ function deleteRoom() {
     let id = $('');
 
     $.ajax({
-        url: "../CRUD/delete_room.php",
+        url: "../crud/delete_room.php",
         method: "post",
         dataType: "TEXT",
         data:
