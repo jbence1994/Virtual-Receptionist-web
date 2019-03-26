@@ -100,6 +100,8 @@ class InputValidation {
 
     public function is_valid_email_address($input) {
 
+        $valid = false;
+
         if (filter_var($input, FILTER_VALIDATE_EMAIL)) {
 
             $valid = false;
