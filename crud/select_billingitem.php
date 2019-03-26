@@ -24,8 +24,8 @@ while ($row = $result->fetch_assoc()) {
             . "<td contenteditable>{$row['BillingItemName']}</td>"
             . "<td contenteditable>{$row['Price']}</td>"
             . "<td><select class='browser-default custom-select'><option>{$row['BillingItemCategoryName']}</option></select></td>"
-            . "<td><button class='btn btn-primary' class='delete' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete_billingitem'>Tétel törlése</button></td>"
-            . "<td><button class='btn btn-primary' class='update' id='{$row['ID']}'>Tétel módosítása</button></td>"
+            . "<td><input type='submit' class='btn btn-primary' class='delete' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete_billingitem' value='Tétel törlése'/></td>"
+            . "<td><input type='submit' class='btn btn-primary' class='update' id='{$row['ID']}' value='Tétel módosítása'/></td>"
             . "</tr>";
 }
 echo $billingItems;
@@ -34,7 +34,7 @@ $billingItems = "<tr>"
         . "<td class='editable' id='billingitem' contenteditable></td>"
         . "<td class='editable' id='price' contenteditable></td>"
         . "<td><select class='browser-default custom-select'category' contenteditable></td>"
-        . "<td colspan='2'><button class='btn btn-success' class='insert'>Új tétel hozzáadása</button></td>"
+        . "<td colspan='2'><input type='submit' class='btn btn-success' class='insert_billingItem' value='Új tétel hozzáadása'/></td>"
         . "</tr>";
 $billingItems .= "</table>";
 echo $billingItems;
