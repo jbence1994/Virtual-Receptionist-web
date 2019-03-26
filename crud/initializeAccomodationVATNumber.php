@@ -15,4 +15,4 @@ while ($row = $result->fetch_assoc()) {
     $vat = $row["VATNumber"];
 }
 
-echo $vat;
+echo '(' . $vat . ')';
