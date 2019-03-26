@@ -176,13 +176,13 @@ function deleteBillingItem() {
  * Kijelölt szobát adatbázisból törlő metódus
  */
 function deleteRoom() {
-    let number = $('#number');
+    let id = $('#id');
     $.ajax({
         url: "../crud/delete_room.php",
         method: "post",
         dataType: "TEXT",
         data: {
-            "delete": number
+            "id": id
         },
         success: function () {
             getRooms();
