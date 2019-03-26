@@ -28,6 +28,7 @@ $(document).ready(function () {
  * Szálláshely nevének betöltése a navigációs sávra
  */
 function inializeAccomodationNameOnNavbar() {
+
     $.ajax({
         url: "../crud/initializeAccomodationName.php",
         method: "get",
@@ -44,6 +45,7 @@ function inializeAccomodationNameOnNavbar() {
  * Szálláshely adószámának betöltése a navigációs sávra
  */
 function inializeAccomodationVATNumberOnNavbar() {
+
     $.ajax({
         url: "../crud/initializeAccomodationVATNumber.php",
         method: "get",
@@ -60,6 +62,7 @@ function inializeAccomodationVATNumberOnNavbar() {
  * Szálláshely szálláshelyazonosítójának betöltése a navigációs sávra
  */
 function inializeAccomodationIDOnNavbar() {
+
     $.ajax({
         url: "../crud/initalizeAccomodationID.php",
         method: "get",
@@ -76,6 +79,7 @@ function inializeAccomodationIDOnNavbar() {
  * Szálláshely adatait adatbázisból leolvasó metódus
  */
 function getAccomodationData() {
+
     $.ajax({
         url: "../crud/select_accomodation.php",
         method: "get",
@@ -92,6 +96,7 @@ function getAccomodationData() {
  * Számlázási tételeket adatbázisból leolvasó metódus
  */
 function getBillingItems() {
+
     $.ajax({
         url: "../crud/select_billingitem.php",
         method: "get",
@@ -108,6 +113,7 @@ function getBillingItems() {
  * Szobák adatait adatbázisból leolvasó metódus
  */
 function getRooms() {
+
     $.ajax({
         url: "../crud/select_room.php",
         method: "get",
@@ -124,6 +130,7 @@ function getRooms() {
  * Szálláshely adatait adatbázisban módosító metódus
  */
 function updateAccomodationData() {
+
     $.ajax({
         url: "../crud/update_accomodation.php",
         method: "post",
@@ -145,8 +152,19 @@ function updateAccomodationData() {
  * Számlázási tétel adatait adatbázisban módosító metódus
  */
 function updateBillingItem() {
-    $.ajax({
 
+    $.ajax({
+        url: "",
+        method: "post",
+        data: {},
+        dataType: "TEXT",
+        success: function (data, textStatus, jqXHR) {
+
+        },
+        error: function (xhr)
+        {
+            alert(xhr.status);
+        }
     });
 }
 
@@ -154,8 +172,19 @@ function updateBillingItem() {
  * Szoba adatait adatbázisban módosító metódus
  */
 function updateRoom() {
-    $.ajax({
 
+    $.ajax({
+        url: "",
+        method: "post",
+        data: {},
+        dataType: "TEXT",
+        success: function (data, textStatus, jqXHR) {
+
+        },
+        error: function (xhr)
+        {
+            alert(xhr.status);
+        }
     });
 }
 
@@ -163,8 +192,19 @@ function updateRoom() {
  * Kijelölt számlázási tételt adatbázisból törlő metódus
  */
 function deleteBillingItem() {
-    $.ajax({
 
+    $.ajax({
+        url: "",
+        method: "post",
+        data: {},
+        dataType: "TEXT",
+        success: function (data, textStatus, jqXHR) {
+
+        },
+        error: function (xhr)
+        {
+            alert(xhr.status);
+        }
     });
 }
 
@@ -172,8 +212,19 @@ function deleteBillingItem() {
  * Kijelölt szobát adatbázisból törlő metódus
  */
 function deleteRoom() {
-    $.ajax({
 
+    $.ajax({
+        url: "",
+        method: "post",
+        data: {},
+        dataType: "TEXT",
+        success: function (data, textStatus, jqXHR) {
+
+        },
+        error: function (xhr)
+        {
+            alert(xhr.status);
+        }
     });
 }
 
@@ -181,8 +232,19 @@ function deleteRoom() {
  * Új számlázási tétel felvitele adatbázisba
  */
 function createBillingItem() {
-    $.ajax({
 
+    $.ajax({
+        url: "",
+        method: "post",
+        data: {},
+        dataType: "TEXT",
+        success: function (data, textStatus, jqXHR) {
+
+        },
+        error: function (xhr)
+        {
+            alert(xhr.status);
+        }
     });
 }
 
@@ -191,7 +253,18 @@ function createBillingItem() {
  * Új szoba felvitele adatbázisba
  */
 function createRoom() {
-    $.ajax({
 
+    $.ajax({
+        url: "",
+        method: "post",
+        data: {},
+        dataType: "TEXT",
+        success: function (data, textStatus, jqXHR) {
+
+        },
+        error: function (xhr)
+        {
+            alert(xhr.status);
+        }
     });
 }
