@@ -26,8 +26,8 @@ while ($row = $result->fetch_assoc()) {
             . "<td contenteditable>{$row['Number']}</td>"
             . "<td><select class='browser-default custom-select'><option>{$row['BillingItemName']}</option></select></td>"
             . "<td contenteditable>{$row['Capacity']}</td>"
-            . "<td><button class='btn btn-primary' class='delete' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete_room'>Szoba törlése</button></td>"
-            . "<td><button class='btn btn-primary' class='update' id='{$row['ID']}'>Szoba módosítása</button></td>"
+            . "<td><button class='btn btn-danger' class='delete' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete_room'>Szoba törlése</button></td>"
+            . "<td><button class='btn btn-warning' class='update' id='{$row['ID']}'>Szoba módosítása</button></td>"
             . "</tr>";
 }
 echo $rooms;
@@ -37,7 +37,7 @@ $rooms = "<tr>"
         . "<td class='editable' id='number' contenteditable></td>"
         . "<td class='editable' id='category' contenteditable></td>"
         . "<td class='editable' id='capacity' contenteditable></td>"
-        . "<td colspan='2'><button class='btn btn-primary' class='insert'>Új szoba hozzáadása</button></td>"
+        . "<td colspan='2'><button class='btn btn-success' class='insert'>Új szoba hozzáadása</button></td>"
         . "</tr>";
 $rooms .= "</table>";
 echo $rooms;
