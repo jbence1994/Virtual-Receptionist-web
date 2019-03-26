@@ -24,6 +24,8 @@ $(document).ready(function () {
     $(document).on("click", "#modal_delete", function () {
         deleteRoom();
     });
+
+    // jQuery események
 });
 
 /*
