@@ -21,9 +21,9 @@ if (isset($_SESSION['accomodation'])) {
 <nav class="navbar bg-dark navbar-dark sticky-top">
     <a class="navbar-brand" href="../web/mainmenu.php">Virtual Receptionist konfigurációs felület
         <br/><br/>
-        <?= $accomodationName . ' (' . $vat . ')'; ?>
+        <span>Szálláshely: <span id="accName_navbar"></span><span id="accVAT_navbar"></span></span>
         <br/>
-        <?= 'Szálláshely azonosító: ' . $acc_id; ?>
+        <span>Szálláshely azonosító: <span id="accID_navbar"></span></span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>

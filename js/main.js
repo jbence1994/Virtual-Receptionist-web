@@ -8,6 +8,7 @@ $(document).ready(function () {
     getRooms();
     getAccomodationData();
     getBillingItems();
+    initalizeAccomodationDataOnNavbar();
 
     $(document).on("click", "#updateCompanyData", function (event) {
 
@@ -31,6 +32,21 @@ function getRooms() {
         method: "get",
         success: function (answer) {
             $('#rooms').html(answer);
+        },
+        error: function (xhr) {
+            alert(xhr.status);
+        }
+    });
+}
+/*
+ * Szálláshely adatok betöltése a navigációs sávra
+ */
+function initalizeAccomodationDataOnNavbar() {
+    $.ajax({
+        url: "../crud/initializeNavbarAccomodationData.php",
+        method: "get",
+        success: function (answer) {
+            $('#accName_navbar').html(answer);
         },
         error: function (xhr) {
             alert(xhr.status);
@@ -62,6 +78,7 @@ function setAccomodationData() {
         dataType: "TEXT",
         data: $('#acc_data').serialize(),
         success: function () {
+            initalizeAccomodationDataOnNavbar();
             getAccomodationData();
         },
         error: function (xhr) {
