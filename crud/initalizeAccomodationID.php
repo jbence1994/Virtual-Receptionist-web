@@ -16,3 +16,4 @@ while ($row = $result->fetch_assoc()) {
 }
 
 echo $acc_id;
+$connection->close();

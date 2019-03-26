@@ -16,3 +16,4 @@ while ($row = $result->fetch_assoc()) {
 }
 
 echo '(' . $vat . ')';
+$connection->close();

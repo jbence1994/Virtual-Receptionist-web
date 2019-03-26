@@ -21,3 +21,5 @@ while ($row = $result->fetch_assoc()) {
             . "<input type='submit' name='updateCompanyData' id='updateCompanyData' class='btn btn-primary' value='Adatok módosítása'/></form>";
 }
 echo $accomodation;
+
+$connection->close();
