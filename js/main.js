@@ -9,7 +9,12 @@ $(document).ready(function () {
     getAccomodationData();
     getBillingItems();
 
-    $(document).on("click", "#updateCompanyData", function () {
+    $(document).on("click", "#updateCompanyData", function (event) {
+
+        /*
+         * submit alapértelmezett működése letitva, hogy ajax kéréssel történjen a módosítás
+         */
+        event.preventDefault();
         setAccomodationData();
     });
 
@@ -51,30 +56,11 @@ function getAccomodationData() {
  * Szálláshely adatait adatbázisban módosító metódus
  */
 function setAccomodationData() {
-
-    let accomodationName = $('#accomodationName').val();
-    let companyName = $('#companyName').val();
-    let contact = $('#contact').val();
-    let VATNumber = $('#VATNumber').val();
-    let headquarters = $('#headquarters').val();
-    let site = $('#site').val();
-    let phoneNumber = $('#phoneNumber').val();
-    let emailAddress = $('#emailAddress').val();
-
     $.ajax({
         url: "../crud/update_accomodation.php",
         method: "post",
         dataType: "TEXT",
-        data: {
-            "accomodationName": accomodationName,
-            "companyName": companyName,
-            "contact": contact,
-            "VATNumber": VATNumber,
-            "headquarters": headquarters,
-            "site": site,
-            "phoneNumber": phoneNumber,
-            "emailAddress": emailAddress
-        },
+        data: $('#acc_data').serialize(),
         success: function () {
             getAccomodationData();
         },
