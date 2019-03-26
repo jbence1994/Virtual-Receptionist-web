@@ -24,7 +24,7 @@ class InputValidation {
 
         for ($i = 0; $i < count($input); $i++) {
 
-            if (is_numeric($input[i])) {
+            if (is_numeric($input[$i])) {
 
                 $criticalIndex = true;
             }
