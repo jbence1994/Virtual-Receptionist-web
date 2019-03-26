@@ -32,8 +32,8 @@ echo $billingItems;
 
 $billingItems = "<tr>"
         . "<td class='editable' id='billingitem' contenteditable></td>"
-        . "<td><select class='browser-default custom-select'category' contenteditable></td>"
         . "<td class='editable' id='price' contenteditable></td>"
+        . "<td><select class='browser-default custom-select'category' contenteditable></td>"
         . "<td colspan='2'><button class='btn btn-success' class='insert'>Új tétel hozzáadása</button></td>"
         . "</tr>";
 $billingItems .= "</table>";

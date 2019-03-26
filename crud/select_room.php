@@ -35,8 +35,8 @@ echo $rooms;
 $rooms = "<tr>"
         . "<td class='editable' id='name' contenteditable></td>"
         . "<td class='editable' id='number' contenteditable></td>"
-        . "<td><select class='browser-default custom-select'category' contenteditable></td>"
         . "<td class='editable' id='capacity' contenteditable></td>"
+        . "<td><select class='browser-default custom-select'category' contenteditable></td>"
         . "<td colspan='2'><button class='btn btn-success' class='insert'>Új szoba hozzáadása</button></td>"
         . "</tr>";
 $rooms .= "</table>";
