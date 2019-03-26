@@ -5,8 +5,8 @@ $(document).ready(function () {
      */
     $('[data-toggle="tooltip"]').tooltip();
 
-    getRooms();
     updateAccomodationData();
+    getRooms();
     getBillingItems();
     inializeAccomodationNameOnNavbar();
     inializeAccomodationVATNumberOnNavbar();
@@ -173,7 +173,7 @@ function deleteBillingItem() {
  */
 function deleteRoom() {
     $.ajax({
-        
+
     });
 }
 
