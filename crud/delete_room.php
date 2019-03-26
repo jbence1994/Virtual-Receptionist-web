@@ -3,8 +3,8 @@
 require_once('../config/connect.php');
 
 if (isset($_POST['delete'])) {
-    $id = $_POST['delete'];
-    $sql = "DELETE FROM room WHERE ID = '$id';";
+    $roomNumber = $_POST['delete'];
+    $sql = "DELETE FROM room WHERE room.NumberID = '$roomNumber';";
 
     $result = $connection->query($sql);
 
