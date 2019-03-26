@@ -6,7 +6,7 @@
         <?php require_once('../templates/head.html'); ?>
     </head>
     <body>
-        <?php require_once('../templates/navbar.php'); ?>
+        <?php require_once('../templates/navbar.html'); ?>
         <div class="content">
             <div class="container-fluid">
                 <section>
