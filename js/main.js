@@ -6,7 +6,7 @@ $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
 
     getRooms();
-    getAccomodationData();
+    updateAccomodationData();
     getBillingItems();
     inializeAccomodationNameOnNavbar();
     inializeAccomodationVATNumberOnNavbar();
@@ -91,27 +91,6 @@ function getAccomodationData() {
 }
 
 /*
- * Szálláshely adatait adatbázisban módosító metódus
- */
-function setAccomodationData() {
-    $.ajax({
-        url: "../crud/update_accomodation.php",
-        method: "post",
-        dataType: "TEXT",
-        data: $('#acc_data').serialize(),
-        success: function () {
-            inializeAccomodationNameOnNavbar();
-            inializeAccomodationVATNumberOnNavbar();
-            inializeAccomodationIDOnNavbar();
-            getAccomodationData();
-        },
-        error: function (xhr) {
-            alert(xhr.status);
-        }
-    });
-}
-
-/*
  * Számlázási tételeket adatbázisból leolvasó metódus
  */
 function getBillingItems() {
@@ -120,27 +99,6 @@ function getBillingItems() {
         method: "get",
         success: function (answer) {
             $('#billingitems').html(answer);
-        },
-        error: function (xhr) {
-            alert(xhr.status);
-        }
-    });
-}
-
-/*
- * Kijelölt szobát kitörlő metódus
- */
-function deleteRoom() {
-    let id = $('');
-    $.ajax({
-        url: "../crud/delete_room.php",
-        method: "post",
-        dataType: "TEXT",
-        data: {
-            delete: id
-        },
-        success: function () {
-            getRooms();
         },
         error: function (xhr) {
             alert(xhr.status);
@@ -161,5 +119,93 @@ function getRooms() {
         error: function (xhr) {
             alert(xhr.status);
         }
+    });
+}
+
+/*
+ * Szálláshely adatait adatbázisban módosító metódus
+ */
+function updateAccomodationData() {
+    $.ajax({
+        url: "../crud/update_accomodation.php",
+        method: "post",
+        dataType: "TEXT",
+        data: $('#acc_data').serialize(),
+        success: function () {
+            inializeAccomodationNameOnNavbar();
+            inializeAccomodationVATNumberOnNavbar();
+            inializeAccomodationIDOnNavbar();
+            getAccomodationData();
+        },
+        error: function (xhr) {
+            alert(xhr.status);
+        }
+    });
+}
+
+/*
+ * Számlázási tétel adatait adatbázisban módosító metódus
+ */
+function updateBillingItem() {
+    $.ajax({
+
+    });
+}
+
+/*
+ * Szoba adatait adatbázisban módosító metódus
+ */
+function updateRoom() {
+    $.ajax({
+
+    });
+}
+
+/*
+ * Kijelölt számlázási tételt adatbázisból törlő metódus
+ */
+function deleteBillingItem() {
+    $.ajax({
+
+    });
+}
+
+/*
+ * Kijelölt szobát adatbázisból törlő metódus
+ */
+function deleteRoom() {
+    let id = $('');
+    $.ajax({
+        url: "../crud/delete_room.php",
+        method: "post",
+        dataType: "TEXT",
+        data: {
+            delete: id
+        },
+        success: function () {
+            getRooms();
+        },
+        error: function (xhr) {
+            alert(xhr.status);
+        }
+    });
+}
+
+/*
+ * Új számlázási tétel felvitele adatbázisba
+ */
+function createBillingItem() {
+    $.ajax({
+
+    });
+}
+
+
+/**
+ * Új szoba felvitele adatbázisba
+ */
+function createRoom() {
+    $.ajax({
+
     });
 }
