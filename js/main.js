@@ -4,12 +4,15 @@ $(document).ready(function () {
      * Tooltip -> Bootstrap
      */
     $('[data-toggle="tooltip"]').tooltip();
+    
     getRooms();
     getAccomodationData();
     getBillingItems();
+    
     $(document).on("click", "#updateCompanyData", function () {
         setAccomodationData();
     });
+    
     $(document).on("click", "#modal_delete", function () {
         deleteRoom();
     });
@@ -61,6 +64,7 @@ function setAccomodationData() {
     $.ajax({
         url: "../crud/update_accomodation.php",
         method: "post",
+        dataType: "TEXT",
         data: {
             "accomodationName": accomodationName,
             "companyName": companyName,
