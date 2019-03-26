@@ -52,14 +52,14 @@ function getAccomodationData() {
  */
 function setAccomodationData() {
 
-    let accomodationName = $('#accomodationName').text();
-    let companyName = $('#companyName').text();
-    let contact = $('#contact').text();
-    let VATNumber = $('#VATNumber').text();
-    let headquarters = $('#headquarters').text();
-    let site = $('#site').text();
-    let phoneNumber = $('#phoneNumber').text();
-    let emailAddress = $('#emailAddress').text();
+    let accomodationName = $('#accomodationName').val();
+    let companyName = $('#companyName').val();
+    let contact = $('#contact').val();
+    let VATNumber = $('#VATNumber').val();
+    let headquarters = $('#headquarters').val();
+    let site = $('#site').val();
+    let phoneNumber = $('#phoneNumber').val();
+    let emailAddress = $('#emailAddress').val();
 
     $.ajax({
         url: "../crud/update_accomodation.php",
