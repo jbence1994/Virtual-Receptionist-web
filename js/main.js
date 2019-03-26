@@ -21,7 +21,7 @@ $(document).ready(function () {
         setAccomodationData();
     });
 
-    $(document).on("click", "#delete_button_modal", function () {
+    $(document).on("click", ".delete", function () {
         deleteRoom();
     });
 
