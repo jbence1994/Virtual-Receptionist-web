@@ -158,7 +158,7 @@ function updateBillingItem() {
         method: "post",
         data: {},
         dataType: "TEXT",
-        success: function (data, textStatus, jqXHR) {
+        success: function () {
 
         },
         error: function (xhr)
@@ -178,7 +178,7 @@ function updateRoom() {
         method: "post",
         data: {},
         dataType: "TEXT",
-        success: function (data, textStatus, jqXHR) {
+        success: function () {
 
         },
         error: function (xhr)
@@ -198,7 +198,7 @@ function deleteBillingItem() {
         method: "post",
         data: {},
         dataType: "TEXT",
-        success: function (data, textStatus, jqXHR) {
+        success: function () {
 
         },
         error: function (xhr)
@@ -218,7 +218,7 @@ function deleteRoom() {
         method: "post",
         data: {},
         dataType: "TEXT",
-        success: function (data, textStatus, jqXHR) {
+        success: function () {
 
         },
         error: function (xhr)
@@ -238,7 +238,7 @@ function createBillingItem() {
         method: "post",
         data: {},
         dataType: "TEXT",
-        success: function (data, textStatus, jqXHR) {
+        success: function () {
 
         },
         error: function (xhr)
@@ -259,7 +259,7 @@ function createRoom() {
         method: "post",
         data: {},
         dataType: "TEXT",
-        success: function (data, textStatus, jqXHR) {
+        success: function () {
 
         },
         error: function (xhr)
