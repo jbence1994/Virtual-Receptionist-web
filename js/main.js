@@ -154,7 +154,7 @@ function updateAccomodationData() {
 function updateBillingItem() {
 
     $.ajax({
-        url: "",
+        url: "../ajax_urls/update_billingitem.php",
         method: "post",
         data: {},
         dataType: "TEXT",
@@ -174,7 +174,7 @@ function updateBillingItem() {
 function updateRoom() {
 
     $.ajax({
-        url: "",
+        url: "../ajax_urls/update_room.php",
         method: "post",
         data: {},
         dataType: "TEXT",
@@ -194,7 +194,7 @@ function updateRoom() {
 function deleteBillingItem() {
 
     $.ajax({
-        url: "",
+        url: "../ajax_urls/delete_billingitem.php",
         method: "post",
         data: {},
         dataType: "TEXT",
@@ -214,7 +214,7 @@ function deleteBillingItem() {
 function deleteRoom() {
 
     $.ajax({
-        url: "",
+        url: "../ajax_urls/delete_room.php",
         method: "post",
         data: {},
         dataType: "TEXT",
@@ -234,7 +234,7 @@ function deleteRoom() {
 function createBillingItem() {
 
     $.ajax({
-        url: "",
+        url: "../ajax_urls/create_billingitem.php",
         method: "post",
         data: {},
         dataType: "TEXT",
@@ -255,7 +255,7 @@ function createBillingItem() {
 function createRoom() {
 
     $.ajax({
-        url: "",
+        url: "../ajax_urls/create_room.php",
         method: "post",
         data: {},
         dataType: "TEXT",
