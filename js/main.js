@@ -30,7 +30,7 @@ $(document).ready(function () {
 function inializeAccomodationNameOnNavbar() {
 
     $.ajax({
-        url: "../crud/initializeAccomodationName.php",
+        url: "../ajax_urls/initializeAccomodationName.php",
         method: "get",
         success: function (answer) {
             $('#accName_navbar').html(answer);
@@ -47,7 +47,7 @@ function inializeAccomodationNameOnNavbar() {
 function inializeAccomodationVATNumberOnNavbar() {
 
     $.ajax({
-        url: "../crud/initializeAccomodationVATNumber.php",
+        url: "../ajax_urls/initializeAccomodationVATNumber.php",
         method: "get",
         success: function (answer) {
             $('#accVAT_navbar').html(answer);
@@ -64,7 +64,7 @@ function inializeAccomodationVATNumberOnNavbar() {
 function inializeAccomodationIDOnNavbar() {
 
     $.ajax({
-        url: "../crud/initalizeAccomodationID.php",
+        url: "../ajax_urls/initalizeAccomodationID.php",
         method: "get",
         success: function (answer) {
             $('#accID_navbar').html(answer);
@@ -81,7 +81,7 @@ function inializeAccomodationIDOnNavbar() {
 function getAccomodationData() {
 
     $.ajax({
-        url: "../crud/select_accomodation.php",
+        url: "../ajax_urls/select_accomodation.php",
         method: "get",
         success: function (answer) {
             $('#accomodation_data_box').html(answer);
@@ -98,7 +98,7 @@ function getAccomodationData() {
 function getBillingItems() {
 
     $.ajax({
-        url: "../crud/select_billingitem.php",
+        url: "../ajax_urls/select_billingitem.php",
         method: "get",
         success: function (answer) {
             $('#billingitems').html(answer);
@@ -115,7 +115,7 @@ function getBillingItems() {
 function getRooms() {
 
     $.ajax({
-        url: "../crud/select_room.php",
+        url: "../ajax_urls/select_room.php",
         method: "get",
         success: function (answer) {
             $('#rooms').html(answer);
@@ -132,7 +132,7 @@ function getRooms() {
 function updateAccomodationData() {
 
     $.ajax({
-        url: "../crud/update_accomodation.php",
+        url: "../ajax_urls/update_accomodation.php",
         method: "post",
         dataType: "TEXT",
         data: $('#acc_data').serialize(),
