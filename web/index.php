@@ -20,6 +20,11 @@ if (isset($_SESSION['accomodation'])) {
                     <input type="text" name="accomodationID" id="accomodationID" class="form-control" placeholder="Szálláshely azonosító" required/>
                     <input type="password" name="password" id="password" class="form-control" placeholder="Jelszó" required/>
                     <input type="submit" name="login" id="login" class="btn btn-primary" value="Bejelentkezés"/>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input"/>Maradjon bejelentkezve
+                        </label>
+                    </div>
                 </div>
             </form>
             <div id="registration">
