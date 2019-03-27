@@ -11,9 +11,9 @@ $(document).ready(function () {
     inializeAccomodationNameOnNavbar();
     inializeAccomodationVATNumberOnNavbar();
     inializeAccomodationIDOnNavbar();
-    
+
     setTimeout(function () {
-        $(".delete_billingitem").click(function () {
+        $(".delete_billingitem").on("click", function () {
             let parent_row = $(this).closest("tr")[0];
 
             $("#delete_billingitem_modal").click(function () {
@@ -21,7 +21,22 @@ $(document).ready(function () {
                 $(parent_row).fadeOut();
             });
         });
-   }, 500);
+
+        $(".update_billingitem").on("click", function () {
+
+            let parent_row = $(this).closest("tr")[0];
+            let name = $(parent_row).find(".row_name")[0];
+            let price = $(parent_row).find(".row_price")[0];
+            let row_select = $(parent_row).find(".row_select")[0];
+
+            updateBillingItem({
+                "id": $(parent_row).attr("id"),
+                "name": $(name).html(),
+                "price": $(price).html(),
+                "category": $($(row_select).find(".browser-default")[0]).val()
+            })
+        });
+    }, 500);
 
     $(document).on("click", "#updateCompanyData", function (event) {
         /*
@@ -161,12 +176,12 @@ function updateAccomodationData() {
 /*
  * Számlázási tétel adatait adatbázisban módosító metódus
  */
-function updateBillingItem() {
+function updateBillingItem(object) {
 
     $.ajax({
         url: "../ajax_urls/update_billingitem.php",
         method: "post",
-        data: {},
+        data: object,
         dataType: "TEXT",
         success: function () {
 
@@ -269,7 +284,7 @@ function createRoom() {
         url: "../ajax_urls/create_room.php",
         method: "post",
         data: {},
-        dataType: "TEXT",                                                           
+        dataType: "TEXT",
         success: function () {
 
         },

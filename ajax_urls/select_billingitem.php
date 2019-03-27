@@ -29,9 +29,9 @@ while ($item = $billing_item_categories->fetch_assoc()) {
 
 while ($row = $result->fetch_assoc()) {
     $billingItems .= "<tr id='{$row['ID']}'>"
-            . "<td contenteditable>{$row['BillingItemName']}</td>"
-            . "<td contenteditable>{$row['Price']}</td>"
-            . "<td>"
+            . "<td class='row_name' contenteditable>{$row['BillingItemName']}</td>"
+            . "<td class='row_price' contenteditable>{$row['Price']}</td>"
+            . "<td class='row_select'>"
                     . "<select class='browser-default custom-select'>";
                     foreach ($categories as $category) {
                         $selected = '';
@@ -40,7 +40,7 @@ while ($row = $result->fetch_assoc()) {
                             $selected = 'selected';
                         }
                         
-                        $billingItems .= "<option $selected>{$category['BillingItemCategoryName']}</option>";
+                        $billingItems .= "<option $selected value='" . $category['ID'] . "'>{$category['BillingItemCategoryName']}</option>";
                     }
                     "</select>"
             . "</td>";
@@ -56,7 +56,7 @@ $billingItems = "<tr style='background-color: orange'>"
         . "<td>"
         .   "<select class='browser-default custom-select'category' contenteditable>";
                 foreach ($categories as $category) {
-                   $billingItems .= "<option>{$category['BillingItemCategoryName']}</option>";
+                   $billingItems .= "<option value='" . $category['ID'] . "'>{$category['BillingItemCategoryName']}</option>";
                 }
 $billingItems .= "</select>";
 $billingItems .= "</td>";
