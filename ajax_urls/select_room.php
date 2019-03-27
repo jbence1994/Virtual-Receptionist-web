@@ -52,19 +52,28 @@ while ($row = $result->fetch_assoc()) {
     "</select>"
             . "</td>";
 
-    $rooms .= "<td><input type='submit' class='btn btn-primary delete_room' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete_room' value='Szoba törlése'/></td>"
+    $rooms .= "<td><input type='submit' class='btn btn-primary delete_room' data-toggle='modal' data-target='#modal_delete_room' value='Szoba törlése'/></td>"
             . "<td><input type='submit' class='btn btn-primary update_room' id='{$row['ID']}' value='Szoba módosítása'/></td>"
             . "</tr>";
 }
 echo $rooms;
 
-$rooms = "<tr>"
-        . "<td class='editable' id='name' contenteditable></td>"
-        . "<td class='editable' id='number' contenteditable></td>"
-        . "<td class='editable' id='capacity' contenteditable></td>"
-        . "<td><select class='browser-default custom-select'category' contenteditable></td>"
-        . "<td colspan='2'><input type='submit' class='btn btn-success insert_room' value='Új szoba hozzáadása'/></td>"
-        . "</tr>";
+$rooms = "<tr id='edit_row_room'>"
+        . "<td class='editable row_room_name' contenteditable></td>"
+        . "<td class='editable row_room_price' contenteditable></td>"
+        . "<td class='editable row_room_category' contenteditable></td>"
+        . "<td>"
+        . "<select class='browser-default custom-select row_room_select' contenteditable>";
+
+foreach ($categories as $category) {
+
+    $rooms .= "<option value='" . $category['ID'] . "'>{$category['BillingItemName']}</option>";
+}
+
+$rooms .= "</select>";
+$rooms .= "</td>";
+$rooms .= "<td colspan='2'><input type='submit' class='btn btn-success insert_room' value='Új szoba hozzáadása'/></td>";
+$rooms .= "</tr>";
 $rooms .= "</table>";
 echo $rooms;
 
