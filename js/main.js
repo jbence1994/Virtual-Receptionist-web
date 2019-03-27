@@ -21,7 +21,7 @@ $(document).ready(function () {
         updateAccomodationData();
     });
 
-    // jQuery események
+    // egyéb jQuery események, TODO ...
 });
 
 /*
