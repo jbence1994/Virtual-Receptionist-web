@@ -2,7 +2,6 @@
 
 require_once('../config/connect.php');
 
-
 $sql = "SELECT accomodation_profile.AccomodationID FROM accomodation_profile";
 $result = $connection->query($sql);
 
