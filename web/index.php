@@ -7,7 +7,6 @@ if (isset($_SESSION['accomodation'])) {
 <!DOCTYPE html>
 <html lang="hu">
     <head>
-        <meta charset="utf-8"/>
         <title>Bejelentkezés | Virtual Receptionist</title>
         <?php require_once('../templates/head.html'); ?>
     </head>
