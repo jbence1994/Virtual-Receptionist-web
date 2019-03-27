@@ -12,14 +12,17 @@ $(document).ready(function () {
     inializeAccomodationVATNumberOnNavbar();
     inializeAccomodationIDOnNavbar();
 
-    // fujjj
     setInterval(function () {
+
         $(".delete_billingitem").on("click", function () {
+
             let parent_row = $(this).closest("tr")[0];
 
             $("#delete_billingitem_modal").click(function () {
+
                 deleteBillingItem($(parent_row).attr("id"));
                 $(parent_row).fadeOut();
+
             });
         });
 
@@ -35,7 +38,8 @@ $(document).ready(function () {
                 "name": $(name).html(),
                 "price": $(price).html(),
                 "category": $($(row_select).find(".browser-default")[0]).val()
-            })
+            });
+
         });
 
         $('.insert_billingItem').on("click", function () {
@@ -50,18 +54,20 @@ $(document).ready(function () {
                 "price": $(price).html(),
                 "category": $(row_select).val()
             });
+
         });
+
     }, 500);
 
     $(document).on("click", "#updateCompanyData", function (event) {
+
         /*
-         * submit alapértelmezett működése letitva, hogy ajax kéréssel történjen a módosítás
+         * Submit alapértelmezett működése letitva, hogy ajax kéréssel történjen a módosítás
          */
         event.preventDefault();
         updateAccomodationData();
     });
 
-    // egyéb jQuery események, TODO ...
 });
 
 /*
@@ -232,6 +238,7 @@ function updateRoom() {
  * Kijelölt számlázási tételt adatbázisból törlő metódus
  */
 function deleteBillingItem(id) {
+
     $.ajax({
         url: "../ajax_urls/delete_billingitem.php",
         method: "post",
@@ -239,14 +246,12 @@ function deleteBillingItem(id) {
             "id": id
         },
         dataType: "TEXT",
-        success: function () {
-
-        },
         error: function (xhr)
         {
             alert(xhr.status);
         }
     });
+
 }
 
 /*
@@ -259,9 +264,6 @@ function deleteRoom() {
         method: "post",
         data: {},
         dataType: "TEXT",
-        success: function () {
-
-        },
         error: function (xhr)
         {
             alert(xhr.status);
@@ -273,7 +275,7 @@ function deleteRoom() {
  * Új számlázási tétel felvitele adatbázisba
  */
 function createBillingItem(object) {
-    
+
     $.ajax({
         url: "../ajax_urls/create_billingitem.php",
         method: "post",

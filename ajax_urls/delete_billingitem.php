@@ -6,7 +6,7 @@ if (!empty($_POST['id'])) {
 
     $id = $_POST['id'];
 
-    $sql = "DELETE FROM billing_item WHERE billing_item.ID = $id";
+    $sql = "DELETE FROM billing_item WHERE billing_item.ID = '$id'";
     $result = $connection->query($sql);
 
     if (!$result) {

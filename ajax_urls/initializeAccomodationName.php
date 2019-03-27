@@ -6,7 +6,7 @@ $sql = "SELECT accomodation.AccomodationName FROM accomodation";
 $result = $connection->query($sql);
 
 if (!$result) {
-    die();
+    die("Hiba");
 }
 
 while ($row = $result->fetch_assoc()) {

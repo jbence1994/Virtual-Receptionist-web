@@ -3,6 +3,7 @@
 require_once('../config/connect.php');
 
 if (!empty($_POST['name']) && !empty($_POST['category']) && !empty($_POST['price'])) {
+
     $name = $_POST['name'];
     $category = $_POST['category'];
     $price = $_POST['price'];
