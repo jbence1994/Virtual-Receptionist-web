@@ -21,7 +21,7 @@ if (isset($_SESSION['accomodation'])) {
                     <input type="submit" name="login" id="login" class="btn btn-primary" value="Bejelentkezés"/>
                     <div class="form-check-inline">
                         <label class="form-check-label">
-                            <input type="checkbox" class="form-check-input"/>Maradjon bejelentkezve
+                            <input name="rememberMe" type="checkbox" class="form-check-input"/>Maradjon bejelentkezve
                         </label>
                     </div>
                 </div>

@@ -7,7 +7,12 @@ if (isset($_POST['login'])) {
 
     $accomodationID = $_POST['accomodationID'];
     $password = $_POST['password'];
-
+    
+    if (isset($_POST['rememberMe'])) {
+        // 30 days
+        setcookie("rememberMe-$accomodationID", true, time() + (86400 * 30), '/');
+    }
+    
     $sql = "SELECT accomodation_profile.AccomodationID, accomodation_profile.Password FROM accomodation_profile WHERE accomodation_profile.AccomodationID = ? AND accomodation_profile.Password = ?;";
 
     $statement = $connection->prepare($sql);
