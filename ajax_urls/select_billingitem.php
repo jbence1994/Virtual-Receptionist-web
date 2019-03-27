@@ -56,7 +56,7 @@ while ($row = $result->fetch_assoc()) {
 }
 echo $billingItems;
 
-$billingItems = "<tr id='edit_row' style='background-color: orange'>"
+$billingItems = "<tr id='edit_row'>"
         . "<td class='editable row_name' contenteditable></td>"
         . "<td class='editable row_price' contenteditable></td>"
         . "<td>"
