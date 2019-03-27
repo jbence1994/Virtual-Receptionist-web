@@ -3,8 +3,8 @@
 require_once('../config/connect.php');
 require_once('../templates/modal_delete_room.html');
 
-$sql = "SELECT room.ID, room.Name, room.Number, billing_item.BillingItemName, room.Capacity FROM room, billing_item WHERE room.Category=billing_item.ID ORDER BY room.ID;";
-$result = $connection->query($sql);
+$room = "SELECT * FROM room ORDER BY ID;";
+$result = $connection->query($room);
 
 if (!$result) {
     die("Hiba az olvasás közben");
@@ -20,14 +20,37 @@ $rooms = "<table class='table table-striped' id='editable_table'>"
         . "<th></th>"
         . "</tr>";
 
+$room_category = "SELECT * FROM billing_item;";
+$room_categories = $connection->query($room_category);
+$categories = [];
+
+while ($item = $room_categories->fetch_assoc()) {
+    $categories[] = $item;
+}
+
 while ($row = $result->fetch_assoc()) {
     $rooms .= "<tr>"
             . "<td contenteditable>{$row['Name']}</td>"
             . "<td contenteditable>{$row['Number']}</td>"
             . "<td contenteditable>{$row['Capacity']}</td>"
-            . "<td><select class='browser-default custom-select'><option>{$row['BillingItemName']}</option></select></td>"
-            . "<td><input type='submit' class='btn btn-primary' class='delete' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete_room' value='Szoba törlése'/></td>"
-            . "<td><input type='submit' class='btn btn-primary' class='update' id='{$row['ID']}' value='Szoba módosítása'/></td>"
+            . "<td><select class='browser-default custom-select'>";
+
+    foreach ($categories as $category) {
+
+        $selected = '';
+
+        if ($category['ID'] == $row['Category']) {
+            $selected = 'selected';
+        }
+
+        $rooms .= "<option $selected value='" . $category['ID'] . "'>{$category['BillingItemName']}</option>";
+    }
+
+    "</select>"
+            . "</td>";
+
+    $rooms .= "<td><input type='submit' class='btn btn-primary delete_room' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete_room' value='Szoba törlése'/></td>"
+            . "<td><input type='submit' class='btn btn-primary update_room' id='{$row['ID']}' value='Szoba módosítása'/></td>"
             . "</tr>";
 }
 echo $rooms;
@@ -37,7 +60,7 @@ $rooms = "<tr>"
         . "<td class='editable' id='number' contenteditable></td>"
         . "<td class='editable' id='capacity' contenteditable></td>"
         . "<td><select class='browser-default custom-select'category' contenteditable></td>"
-        . "<td colspan='2'><input type='submit' class='btn btn-success' class='insert' value='Új szoba hozzáadása'/></td>"
+        . "<td colspan='2'><input type='submit' class='btn btn-success insert_room' value='Új szoba hozzáadása'/></td>"
         . "</tr>";
 $rooms .= "</table>";
 echo $rooms;

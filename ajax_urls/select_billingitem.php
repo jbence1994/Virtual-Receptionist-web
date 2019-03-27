@@ -21,7 +21,7 @@ $billingItems = "<table class='table table-striped' id='editable_table'>"
 
 $billing_item_category = "SELECT * FROM billing_item_category;";
 $billing_item_categories = $connection->query($billing_item_category);
-$cateogires = [];
+$categories = [];
 
 while ($item = $billing_item_categories->fetch_assoc()) {
     $categories[] = $item;
