@@ -20,11 +20,14 @@ $rooms = "<table class='table table-striped' id='editable_table'>"
         . "<th></th>"
         . "</tr>";
 
-$room_category = "SELECT * FROM billing_item;";
-$room_categories = $connection->query($room_category);
+$room_category = "SELECT billing_item.ID, billing_item.BillingItemName FROM billing_item, "
+        . "billing_item_category WHERE billing_item.Category = billing_item_category.ID AND "
+        . "billing_item_category.BillingItemCategoryName = 'Szállás';";
+
+$room_categories_result = $connection->query($room_category);
 $categories = [];
 
-while ($item = $room_categories->fetch_assoc()) {
+while ($item = $room_categories_result->fetch_assoc()) {
     $categories[] = $item;
 }
 

@@ -19,11 +19,11 @@ $billingItems = "<table class='table table-striped' id='editable_table'>"
         . "<th></th>"
         . "</tr>";
 
-$billing_item_category = "SELECT * FROM billing_item_category;";
-$billing_item_categories = $connection->query($billing_item_category);
-$categories = [];
+$billing_item_category = "SELECT ID, BillingItemCategoryName FROM billing_item_category;";
+$billing_item_categories_result = $connection->query($billing_item_category);
+$categorires = [];
 
-while ($item = $billing_item_categories->fetch_assoc()) {
+while ($item = $billing_item_categories_result->fetch_assoc()) {
     $categories[] = $item;
 }
 
