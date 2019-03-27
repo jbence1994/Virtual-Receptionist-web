@@ -11,9 +11,19 @@ $(document).ready(function () {
     inializeAccomodationNameOnNavbar();
     inializeAccomodationVATNumberOnNavbar();
     inializeAccomodationIDOnNavbar();
+    
+    setTimeout(function () {
+        $(".delete_billingitem").click(function () {
+            let parent_row = $(this).closest("tr")[0];
+
+            $("#delete_billingitem_modal").click(function () {
+                deleteBillingItem($(parent_row).attr("id"));
+                $(parent_row).fadeOut();
+            });
+        });
+   }, 500);
 
     $(document).on("click", "#updateCompanyData", function (event) {
-
         /*
          * submit alapértelmezett működése letitva, hogy ajax kéréssel történjen a módosítás
          */
@@ -191,12 +201,13 @@ function updateRoom() {
 /*
  * Kijelölt számlázási tételt adatbázisból törlő metódus
  */
-function deleteBillingItem() {
-
+function deleteBillingItem(id) {
     $.ajax({
         url: "../ajax_urls/delete_billingitem.php",
         method: "post",
-        data: {},
+        data: {
+            "id": id
+        },
         dataType: "TEXT",
         success: function () {
 
@@ -258,7 +269,7 @@ function createRoom() {
         url: "../ajax_urls/create_room.php",
         method: "post",
         data: {},
-        dataType: "TEXT",
+        dataType: "TEXT",                                                           
         success: function () {
 
         },

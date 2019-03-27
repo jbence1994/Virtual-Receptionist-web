@@ -3,8 +3,8 @@
 require_once('../config/connect.php');
 require_once('../templates/modal_delete_billingitem.html');
 
-$sql = "SELECT billing_item.ID, billing_item.BillingItemName, billing_item_category.BillingItemCategoryName, billing_item.Price FROM billing_item, billing_item_category WHERE billing_item.Category = billing_item_category.ID;";
-$result = $connection->query($sql);
+$billing_item = "SELECT * FROM billing_item;";
+$result = $connection->query($billing_item);
 
 if (!$result) {
     die("Hiba az olvasás közben");
@@ -19,23 +19,49 @@ $billingItems = "<table class='table table-striped' id='editable_table'>"
         . "<th></th>"
         . "</tr>";
 
+$billing_item_category = "SELECT * FROM billing_item_category;";
+$billing_item_categories = $connection->query($billing_item_category);
+$cateogires = [];
+
+while ($item = $billing_item_categories->fetch_assoc()) {
+    $categories[] = $item;
+}
+
 while ($row = $result->fetch_assoc()) {
-    $billingItems .= "<tr>"
+    $billingItems .= "<tr id='{$row['ID']}'>"
             . "<td contenteditable>{$row['BillingItemName']}</td>"
             . "<td contenteditable>{$row['Price']}</td>"
-            . "<td><select class='browser-default custom-select'><option>{$row['BillingItemCategoryName']}</option></select></td>"
-            . "<td><input type='submit' class='btn btn-primary' class='delete_billingitem' id='{$row['ID']}' data-toggle='modal' data-target='#modal_delete_billingitem' value='Tétel törlése'/></td>"
-            . "<td><input type='submit' class='btn btn-primary' class='update_billingitem' id='{$row['ID']}' value='Tétel módosítása'/></td>"
-            . "</tr>";
+            . "<td>"
+                    . "<select class='browser-default custom-select'>";
+                    foreach ($categories as $category) {
+                        $selected = '';
+                        
+                        if ($category['ID'] == $row['Category']) {
+                            $selected = 'selected';
+                        }
+                        
+                        $billingItems .= "<option $selected>{$category['BillingItemCategoryName']}</option>";
+                    }
+                    "</select>"
+            . "</td>";
+    $billingItems .= "<td><input type='submit' class='btn btn-primary delete_billingitem' data-toggle='modal' data-target='#modal_delete_billingitem' value='Tétel törlése'/></td>";
+    $billingItems .= "<td><input type='submit' class='btn btn-primary update_billingitem' id='{$row['ID']}' value='Tétel módosítása'/></td>";
+    $billingItems .= "</tr>";
 }
 echo $billingItems;
 
-$billingItems = "<tr>"
+$billingItems = "<tr style='background-color: orange'>"
         . "<td class='editable' id='billingitem' contenteditable></td>"
         . "<td class='editable' id='price' contenteditable></td>"
-        . "<td><select class='browser-default custom-select'category' contenteditable></td>"
-        . "<td colspan='2'><input type='submit' class='btn btn-success' class='insert_billingItem' value='Új tétel hozzáadása'/></td>"
-        . "</tr>";
+        . "<td>"
+        .   "<select class='browser-default custom-select'category' contenteditable>";
+                foreach ($categories as $category) {
+                   $billingItems .= "<option>{$category['BillingItemCategoryName']}</option>";
+                }
+$billingItems .= "</select>";
+$billingItems .= "</td>";
+$billingItems .= "<td colspan='2'><input type='submit' class='btn btn-success' class='insert_billingItem' value='Új tétel hozzáadása'/></td>";
+$billingItems .= "</tr>";
 $billingItems .= "</table>";
 echo $billingItems;
 
