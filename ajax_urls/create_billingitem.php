@@ -2,11 +2,17 @@
 
 require_once('../config/connect.php');
 
-$sql = "";
-$result = $connection->query($sql);
+if (!empty($_POST['name']) && !empty($_POST['category']) && !empty($_POST['price'])) {
+    $name = $_POST['name'];
+    $category = $_POST['category'];
+    $price = $_POST['price'];
 
-if (!$result) {
-    die("Hiba!");
+    $sql = "INSERT INTO billing_item (BillingItemName, Category, Price) VALUES ('$name', '$category', '$price');";
+    $result = $connection->query($sql);
+
+    if (!$result) {
+        die("Hiba!");
+    }
+
+    $connection->close();
 }
-
-$connection->close();

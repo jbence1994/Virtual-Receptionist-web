@@ -50,17 +50,17 @@ while ($row = $result->fetch_assoc()) {
 }
 echo $billingItems;
 
-$billingItems = "<tr style='background-color: orange'>"
-        . "<td class='editable' id='billingitem' contenteditable></td>"
-        . "<td class='editable' id='price' contenteditable></td>"
+$billingItems = "<tr id='edit_row' style='background-color: orange'>"
+        . "<td class='editable row_name' contenteditable></td>"
+        . "<td class='editable row_price' contenteditable></td>"
         . "<td>"
-        .   "<select class='browser-default custom-select'category' contenteditable>";
+        .   "<select class='browser-default custom-select row_select' contenteditable>";
                 foreach ($categories as $category) {
                    $billingItems .= "<option value='" . $category['ID'] . "'>{$category['BillingItemCategoryName']}</option>";
                 }
 $billingItems .= "</select>";
 $billingItems .= "</td>";
-$billingItems .= "<td colspan='2'><input type='submit' class='btn btn-success' class='insert_billingItem' value='Új tétel hozzáadása'/></td>";
+$billingItems .= "<td colspan='2'><input type='submit' class='btn btn-success insert_billingItem' value='Új tétel hozzáadása'/></td>";
 $billingItems .= "</tr>";
 $billingItems .= "</table>";
 echo $billingItems;

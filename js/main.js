@@ -12,7 +12,8 @@ $(document).ready(function () {
     inializeAccomodationVATNumberOnNavbar();
     inializeAccomodationIDOnNavbar();
 
-    setTimeout(function () {
+    // fujjj
+    setInterval(function () {
         $(".delete_billingitem").on("click", function () {
             let parent_row = $(this).closest("tr")[0];
 
@@ -35,6 +36,20 @@ $(document).ready(function () {
                 "price": $(price).html(),
                 "category": $($(row_select).find(".browser-default")[0]).val()
             })
+        });
+
+        $('.insert_billingItem').on("click", function () {
+
+            let parent_row = $(this).closest("tr")[0];
+            let name = $(parent_row).find(".row_name")[0];
+            let price = $(parent_row).find(".row_price")[0];
+            let row_select = $(parent_row).find(".row_select")[0];
+
+            createBillingItem({
+                "name": $(name).html(),
+                "price": $(price).html(),
+                "category": $(row_select).val()
+            });
         });
     }, 500);
 
@@ -257,15 +272,15 @@ function deleteRoom() {
 /*
  * Új számlázási tétel felvitele adatbázisba
  */
-function createBillingItem() {
-
+function createBillingItem(object) {
+    
     $.ajax({
         url: "../ajax_urls/create_billingitem.php",
         method: "post",
-        data: {},
+        data: object,
         dataType: "TEXT",
         success: function () {
-
+            getBillingItems();
         },
         error: function (xhr)
         {
