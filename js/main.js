@@ -89,6 +89,27 @@ $(document).ready(function () {
 
         });
 
+        /**
+         * Szoba törlése event
+         */
+        $(".delete_room").on("click", function () {
+
+        });
+
+        /**
+         * Szoba módosítása event
+         */
+        $(".update_room").on("click", function () {
+
+        });
+
+        /**
+         * Szoba létrehozása event
+         */
+        $(".insert_room").on("click", function () {
+
+        });
+
     }, 500);
 
     /**
