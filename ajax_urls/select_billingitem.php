@@ -7,7 +7,7 @@ $billing_item = "SELECT * FROM billing_item;";
 $result = $connection->query($billing_item);
 
 if (!$result) {
-    die("Hiba az olvasás közben");
+    die("Hiba");
 }
 
 $billingItems = "<table class='table table-striped' id='editable_table'>"

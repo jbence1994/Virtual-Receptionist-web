@@ -7,7 +7,7 @@ $room = "SELECT * FROM room ORDER BY Number;";
 $result = $connection->query($room);
 
 if (!$result) {
-    die("Hiba az olvasás közben");
+    die("Hiba");
 }
 
 $rooms = "<table class='table table-striped' id='editable_table'>"
