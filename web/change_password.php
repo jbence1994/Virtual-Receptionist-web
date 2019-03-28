@@ -5,7 +5,9 @@
         <?php require_once('../templates/head.html'); ?>
     </head>
     <body>
-        <h4 class="text-center">Fejlesztés alatt...</h4>
+        <div class="content">
+            <?php require_once('../templates/change_password.html'); ?>
+        </div>
     </body>
     <?php require_once('../templates/footer.php'); ?>
 </html>
