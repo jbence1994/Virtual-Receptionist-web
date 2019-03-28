@@ -10,7 +10,7 @@ if (!empty($_POST['name']) && !empty($_POST['number']) && !empty($_POST['capacit
     $category = $_POST['category'];
 
     $sql = "INSERT INTO room (Number, Name, Category, Capacity) "
-            . "VALUES ('$number','$name','$category', '$capacity');";
+            . "VALUES ('$number', '$name', '$category', '$capacity');";
     $result = $connection->query($sql);
 
     if (!$result) {
