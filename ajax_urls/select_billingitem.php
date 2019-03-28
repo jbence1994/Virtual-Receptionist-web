@@ -72,6 +72,7 @@ $billingItems .= "</td>";
 $billingItems .= "<td colspan='2'><input type='submit' class='btn btn-success insert_billingItem' value='Új tétel hozzáadása'/></td>";
 $billingItems .= "</tr>";
 $billingItems .= "</table>";
+
 echo $billingItems;
 
 $connection->close();

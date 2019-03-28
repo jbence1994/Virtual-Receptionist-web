@@ -76,6 +76,7 @@ $rooms .= "</td>";
 $rooms .= "<td colspan='2'><input type='submit' class='btn btn-success insert_room' value='Új szoba hozzáadása'/></td>";
 $rooms .= "</tr>";
 $rooms .= "</table>";
+
 echo $rooms;
 
 $connection->close();
