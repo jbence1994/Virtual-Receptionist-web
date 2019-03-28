@@ -1,19 +1,45 @@
 $(document).ready(function () {
 
-    /*
-     * Tooltip -> Bootstrap
+    /**
+     * Tooltip hover event -> Bootstrap 4
      */
     $('[data-toggle="tooltip"]').tooltip();
 
-    updateAccomodationData();
+    /**
+     * Szálláshely adatainak lekérése adatbázisból
+     */
+    getAccomodationData();
+
+    /**
+     * Szobák lekérése adatbázisból
+     */
     getRooms();
+
+    /**
+     * Számlázási tételek lekérése adatbázisból
+     */
     getBillingItems();
+
+    /**
+     * Szálláshely aktuális, módosítás előtti nevének inicializálása navigációs sávra
+     */
     inializeAccomodationNameOnNavbar();
+
+    /**
+     * Szálláshely aktuális, módosítás előtti adószámának inicializálása navigációs sávra
+     */
     inializeAccomodationVATNumberOnNavbar();
+
+    /**
+     * Szálláshely szálláshelyazonosítójának inicializálása navigációs sávra
+     */
     inializeAccomodationIDOnNavbar();
 
     setInterval(function () {
 
+        /**
+         * Számlázási tétel törlése event
+         */
         $(".delete_billingitem").on("click", function () {
 
             let parent_row = $(this).closest("tr")[0];
@@ -26,6 +52,9 @@ $(document).ready(function () {
             });
         });
 
+        /**
+         * Számlázási tétel módosítása event
+         */
         $(".update_billingitem").on("click", function () {
 
             let parent_row = $(this).closest("tr")[0];
@@ -42,6 +71,9 @@ $(document).ready(function () {
 
         });
 
+        /**
+         * Számlázási tétel létrehozása event
+         */
         $('.insert_billingItem').on("click", function () {
 
             let parent_row = $(this).closest("tr")[0];
@@ -59,10 +91,13 @@ $(document).ready(function () {
 
     }, 500);
 
+    /**
+     * Szálláshely adatainak módosítása event
+     */
     $(document).on("click", "#updateCompanyData", function (event) {
 
         /*
-         * Submit alapértelmezett működése letitva, hogy ajax kéréssel történjen a módosítás
+         * submit alapértelmezett működése letitva, hogy ajax kéréssel történjen a módosítás
          */
         event.preventDefault();
         updateAccomodationData();
@@ -204,9 +239,6 @@ function updateBillingItem(object) {
         method: "post",
         data: object,
         dataType: "TEXT",
-        success: function () {
-
-        },
         error: function (xhr)
         {
             alert(xhr.status);
@@ -217,16 +249,13 @@ function updateBillingItem(object) {
 /*
  * Szoba adatait adatbázisban módosító metódus
  */
-function updateRoom() {
+function updateRoom(object) {
 
     $.ajax({
         url: "../ajax_urls/update_room.php",
         method: "post",
-        data: {},
+        data: object,
         dataType: "TEXT",
-        success: function () {
-
-        },
         error: function (xhr)
         {
             alert(xhr.status);
@@ -257,12 +286,14 @@ function deleteBillingItem(id) {
 /*
  * Kijelölt szobát adatbázisból törlő metódus
  */
-function deleteRoom() {
+function deleteRoom(id) {
 
     $.ajax({
         url: "../ajax_urls/delete_room.php",
         method: "post",
-        data: {},
+        data: {
+            "id": id
+        },
         dataType: "TEXT",
         error: function (xhr)
         {
@@ -291,19 +322,18 @@ function createBillingItem(object) {
     });
 }
 
-
 /**
  * Új szoba felvitele adatbázisba
  */
-function createRoom() {
+function createRoom(object) {
 
     $.ajax({
         url: "../ajax_urls/create_room.php",
         method: "post",
-        data: {},
+        data: object,
         dataType: "TEXT",
         success: function () {
-
+            getRooms();
         },
         error: function (xhr)
         {
