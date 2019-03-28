@@ -5,7 +5,7 @@
         <?php require_once('../templates/head.html'); ?>
     </head>
     <body>
-
+        <h4>Fejlesztés alatt...</h4>
     </body>
     <?php require_once('../templates/footer.php'); ?>
 </html>
