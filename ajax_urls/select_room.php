@@ -3,7 +3,7 @@
 require_once('../config/connect.php');
 require_once('../templates/modal_delete_room.html');
 
-$room = "SELECT * FROM room ORDER BY ID;";
+$room = "SELECT * FROM room ORDER BY Number;";
 $result = $connection->query($room);
 
 if (!$result) {
@@ -33,10 +33,11 @@ while ($item = $room_categories_result->fetch_assoc()) {
 
 while ($row = $result->fetch_assoc()) {
     $rooms .= "<tr id='{$row['ID']}'>"
-            . "<td contenteditable>{$row['Name']}</td>"
-            . "<td contenteditable>{$row['Number']}</td>"
-            . "<td contenteditable>{$row['Capacity']}</td>"
-            . "<td><select class='browser-default custom-select'>";
+            . "<td class='row_room_name' contenteditable>{$row['Name']}</td>"
+            . "<td class='row_room_number' contenteditable>{$row['Number']}</td>"
+            . "<td class='row_room_capacity' contenteditable>{$row['Capacity']}</td>"
+            . "<td class='row_roomcat_select'>"
+            . "<select class='browser-default custom-select'>";
 
     foreach ($categories as $category) {
 
@@ -60,10 +61,10 @@ echo $rooms;
 
 $rooms = "<tr id='edit_row_room'>"
         . "<td class='editable row_room_name' contenteditable></td>"
-        . "<td class='editable row_room_price' contenteditable></td>"
-        . "<td class='editable row_room_category' contenteditable></td>"
+        . "<td class='editable row_room_number' contenteditable></td>"
+        . "<td class='editable row_room_capacity' contenteditable></td>"
         . "<td>"
-        . "<select class='browser-default custom-select row_room_select' contenteditable>";
+        . "<select class='browser-default custom-select row_select' contenteditable>";
 
 foreach ($categories as $category) {
 

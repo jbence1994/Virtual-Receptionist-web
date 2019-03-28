@@ -109,6 +109,26 @@ $(document).ready(function () {
          */
         $(".update_room").on("click", function () {
 
+            let parent_row = $(this).closest("tr")[0];
+            let name = $(parent_row).find(".row_room_name")[0];
+            let number = $(parent_row).find(".row_room_number")[0];
+            let capacity = $(parent_row).find(".row_room_capacity")[0];
+            let category = $(parent_row).find(".row_roomcat_select")[0];
+
+
+            console.log(parent_row + "1");
+            console.log(name + "2");
+            console.log(number + "3");
+            console.log(capacity + "4");
+            console.log(category + "5");
+
+            updateRoom({
+                "id": $(parent_row).attr("id"),
+                "name": $(name).html(),
+                "number": $(number).html(),
+                "capacity": $(capacity).html(),
+                "category": $($(category).find(".browser-default")[0]).val()
+            });
         });
 
         /**
@@ -285,6 +305,9 @@ function updateRoom(object) {
         method: "post",
         data: object,
         dataType: "TEXT",
+        success: function () {
+            getRooms();
+        },
         error: function (xhr)
         {
             alert(xhr.status);
