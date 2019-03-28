@@ -32,7 +32,7 @@ while ($item = $room_categories_result->fetch_assoc()) {
 }
 
 while ($row = $result->fetch_assoc()) {
-    $rooms .= "<tr>"
+    $rooms .= "<tr id='{$row['ID']}'>"
             . "<td contenteditable>{$row['Name']}</td>"
             . "<td contenteditable>{$row['Number']}</td>"
             . "<td contenteditable>{$row['Capacity']}</td>"

@@ -94,6 +94,14 @@ $(document).ready(function () {
          */
         $(".delete_room").on("click", function () {
 
+            let parent_row = $(this).closest("tr")[0];
+
+            $("#delete_room_modal").click(function () {
+
+                deleteRoom($(parent_row).attr("id"));
+                $(parent_row).fadeOut();
+            });
+
         });
 
         /**

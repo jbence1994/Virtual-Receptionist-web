@@ -2,11 +2,16 @@
 
 require_once('../config/connect.php');
 
-$sql = "";
-$result = $connection->query($sql);
+if (!empty($_POST['id'])) {
 
-if (!$result) {
-    die("Hiba!");
+    $id = $_POST['id'];
+
+    $sql = "DELETE FROM room WHERE ID = '$id'";
+    $result = $connection->query($sql);
+
+    if (!$result) {
+        die("Hiba!");
+    }
+
+    $connection->close();
 }
-
-$connection->close();
