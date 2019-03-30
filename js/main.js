@@ -5,34 +5,20 @@ $(document).ready(function () {
      */
     $('[data-toggle="tooltip"]').tooltip();
 
-    /**
-     * Szálláshely adatainak lekérése adatbázisból
-     */
     getAccomodationData();
-
-    /**
-     * Szobák lekérése adatbázisból
-     */
     getRooms();
 
-    /**
-     * Számlázási tételek lekérése adatbázisból
-     */
-    getBillingItems();
+    let url = "../ajax_urls/select_billingitem.php";
 
-    /**
-     * Szálláshely aktuális, módosítás előtti nevének inicializálása navigációs sávra
-     */
+    $(document).on("click", ".page-link", function () {
+
+        let url_with_page_number = "?page=" + $(this).html();
+        url += url_with_page_number;
+    });
+
+    getBillingItems(url);
     inializeAccomodationNameOnNavbar();
-
-    /**
-     * Szálláshely aktuális, módosítás előtti adószámának inicializálása navigációs sávra
-     */
     inializeAccomodationVATNumberOnNavbar();
-
-    /**
-     * Szálláshely szálláshelyazonosítójának inicializálása navigációs sávra
-     */
     inializeAccomodationIDOnNavbar();
 
     setInterval(function () {
@@ -232,19 +218,7 @@ function getAccomodationData() {
 /*
  * Számlázási tételeket adatbázisból leolvasó metódus
  */
-function getBillingItems() {
-
-    let url = "../ajax_urls/select_billingitem.php";
-
-    $('li .page-link').on("click", function () {
-
-        let page = $(this).text();
-        console.log(page);
-
-        let url_with_page_number = "?page=" + page;
-        url += url_with_page_number;
-        console.log(page);
-    });
+function getBillingItems(url) {
 
     $.ajax({
         url: url,
