@@ -5,6 +5,11 @@ $(document).ready(function () {
      */
     $('[data-toggle="tooltip"]').tooltip();
 
+    /**
+     * DataTable 1.0.19 táblázáat formázás
+     */
+    $('.').DataTable();
+
     getAccomodationData();
     getRooms();
     getBillingItems();
