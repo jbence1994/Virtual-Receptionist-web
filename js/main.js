@@ -236,16 +236,15 @@ function getBillingItems() {
 
     let url = "../ajax_urls/select_billingitem.php";
 
-    $('.page_link').click(function () {
+    $('li .page-link').on("click", function () {
 
-        let page = "?page=" + $(this).attr();
-        url += page;
+        let page = $(this).text();
+        console.log(page);
+
+        let url_with_page_number = "?page=" + page;
+        url += url_with_page_number;
+        console.log(page);
     });
-
-
-    if (true) {
-
-    }
 
     $.ajax({
         url: url,
