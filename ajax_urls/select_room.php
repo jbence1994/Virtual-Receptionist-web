@@ -3,12 +3,16 @@
 require_once('../config/connect.php');
 require_once('../templates/modal_delete_room.html');
 
+$result_per_page = 5;
+
 $room = "SELECT * FROM room ORDER BY Number;";
 $result = $connection->query($room);
 
 if (!$result) {
     die("Hiba");
 }
+
+$result_rows = $result->num_rows;
 
 $rooms = "<table class='table table-striped' id='editable_table'>"
         . "<tr>"
@@ -26,6 +30,23 @@ $room_category = "SELECT billing_item.ID, billing_item.BillingItemName FROM bill
 
 $room_categories_result = $connection->query($room_category);
 $categories = [];
+
+$number_of_pages = ceil($result_rows / $result_per_page);
+
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+
+$this_page_first_result = ($page - 1) * $result_per_page;
+
+$sql = "SELECT * FROM room ORDER BY Number LIMIT " . $this_page_first_result . ", " . $result_per_page . ";";
+$result = $connection->query($sql);
+
+if (!$result) {
+    die("Hiba!");
+}
 
 while ($item = $room_categories_result->fetch_assoc()) {
     $categories[] = $item;
@@ -78,5 +99,11 @@ $rooms .= "</tr>";
 $rooms .= "</table>";
 
 echo $rooms;
+
+echo '<ul class="pagination justify-content-center">';
+for ($page = 1; $page <= $number_of_pages; $page++) {
+    echo '<li class="page-item"><a class="page-link" id="' . $page . '">' . $page . '</a>';
+}
+echo '</li></ul>';
 
 $connection->close();

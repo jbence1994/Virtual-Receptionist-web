@@ -12,9 +12,8 @@ $(document).ready(function () {
     $(document).on("click", ".page-link", function () {
         let data = $(this).attr("id");
         getBillingItems(data);
+        getRooms(data);
     });
-
-
 
     inializeAccomodationNameOnNavbar();
     inializeAccomodationVATNumberOnNavbar();
@@ -235,13 +234,14 @@ function getBillingItems(page) {
 /*
  * Szobák adatait adatbázisból leolvasó metódus
  */
-function getRooms() {
+function getRooms(page) {
 
     $.ajax({
         url: "../ajax_urls/select_room.php",
         method: "get",
-        success: function (answer) {
-            $('#rooms').html(answer);
+        data: {"page": page},
+        success: function (page) {
+            $('#rooms').html(page);
         },
         error: function (xhr) {
             alert(xhr.status);
