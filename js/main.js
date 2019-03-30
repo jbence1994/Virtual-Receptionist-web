@@ -7,16 +7,7 @@ $(document).ready(function () {
 
     getAccomodationData();
     getRooms();
-
-    let url = "../ajax_urls/select_billingitem.php";
-
-    $(document).on("click", ".page-link", function () {
-
-        let url_with_page_number = "?page=" + $(this).html();
-        url += url_with_page_number;
-    });
-
-    getBillingItems(url);
+    getBillingItems();
     inializeAccomodationNameOnNavbar();
     inializeAccomodationVATNumberOnNavbar();
     inializeAccomodationIDOnNavbar();
@@ -218,7 +209,15 @@ function getAccomodationData() {
 /*
  * Számlázási tételeket adatbázisból leolvasó metódus
  */
-function getBillingItems(url) {
+function getBillingItems() {
+
+    let url = "../ajax_urls/select_billingitem.php";
+
+    $(document).on("click", ".page-link", function () {
+
+        let url_with_page_number = "?page=" + $(this).html();
+        url += url_with_page_number;
+    });
 
     $.ajax({
         url: url,
