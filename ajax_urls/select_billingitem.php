@@ -109,10 +109,10 @@ $billingItems .= "</table>";
 
 echo $billingItems;
 
-echo '<ul class="pagination justify-content-center"><li class="page-item">';
+echo '<ul class="pagination justify-content-center">';
 for ($page = 1; $page <= $number_of_pages; $page++) {
-    echo '<a class="page-link" href="setbilling.php?page=' . $page . '"/>' . $page . '</li></a>';
+    echo '<li class="page-item"><a class="page-link" href="setbilling.php?page=' . $page . '"/>' . $page . '</a>';
 }
-echo '</ul>';
+echo '</li></ul>';
 
 $connection->close();

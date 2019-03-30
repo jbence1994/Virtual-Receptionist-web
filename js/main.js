@@ -233,20 +233,22 @@ function getAccomodationData() {
  * Számlázási tételeket adatbázisból leolvasó metódus
  */
 function getBillingItems() {
-    
-    let url="";
-    
-    let page_item= $('.page_link').click(function(){
-       url= "../ajax_urls/select_billingitem.php?page=2" ;
+
+    let url = "../ajax_urls/select_billingitem.php";
+
+    $('.page_link').click(function () {
+
+        let page = "?page=" + $(this).attr();
+        url += page;
     });
-    
-    
-    if (true){
-        
+
+
+    if (true) {
+
     }
 
     $.ajax({
-        url: "../ajax_urls/select_billingitem.php?page=2",
+        url: url,
         method: "get",
         success: function (answer) {
             $('#billingitems').html(answer);
