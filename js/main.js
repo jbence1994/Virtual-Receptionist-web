@@ -8,6 +8,14 @@ $(document).ready(function () {
     getAccomodationData();
     getRooms();
     getBillingItems();
+
+    $(document).on("click", ".page-link", function () {
+        let data = $(this).attr("id");
+        getBillingItems(data);
+    });
+
+
+
     inializeAccomodationNameOnNavbar();
     inializeAccomodationVATNumberOnNavbar();
     inializeAccomodationIDOnNavbar();
@@ -209,21 +217,14 @@ function getAccomodationData() {
 /*
  * Számlázási tételeket adatbázisból leolvasó metódus
  */
-function getBillingItems() {
-
-    let url = "../ajax_urls/select_billingitem.php";
-
-    $(document).on("click", ".page-link", function () {
-
-        let url_with_page_number = "?page=" + $(this).html();
-        url += url_with_page_number;
-    });
+function getBillingItems(page) {
 
     $.ajax({
-        url: url,
+        url: "../ajax_urls/select_billingitem.php",
         method: "get",
-        success: function (answer) {
-            $('#billingitems').html(answer);
+        data: {"page": page},
+        success: function (page) {
+            $('#billingitems').html(page);
         },
         error: function (xhr) {
             alert(xhr.status);

@@ -29,10 +29,10 @@ $categorires = [];
 
 $number_of_pages = ceil($result_rows / $result_per_page);
 
-if (!isset($_GET['page'])) {
-    $page = 1;
-} else {
+if (isset($_GET['page'])) {
     $page = $_GET['page'];
+} else {
+    $page = 1;
 }
 
 $this_page_first_result = ($page - 1) * $result_per_page;
@@ -111,7 +111,7 @@ echo $billingItems;
 
 echo '<ul class="pagination justify-content-center">';
 for ($page = 1; $page <= $number_of_pages; $page++) {
-    echo '<li class="page-item"><a class="page-link" href="setbilling.php?page=' . $page . '">' . $page . '</a>';
+    echo '<li class="page-item"><a class="page-link" id="' . $page . '">' . $page . '</a>';
 }
 echo '</li></ul>';
 
