@@ -9,6 +9,11 @@ $(document).ready(function () {
     getRooms();
     getBillingItems();
 
+    /**
+     * 
+     */
+    $('#editable_table').DataTable();
+
     $(document).on("click", ".page-link", function () {
         let data = $(this).attr("id");
         getBillingItems(data);
